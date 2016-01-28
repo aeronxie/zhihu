@@ -22,6 +22,9 @@ static CGFloat const sectionHeight = 35.0f;
 @property (nonatomic,strong) UIButton *leftNaviButton;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *stories;
+@property (nonatomic,strong) NSArray *top_stories;
+@property (nonatomic,strong) NSMutableArray *topPictures;
+@property (nonatomic,strong) NSMutableArray *topTitles;
 @property (nonatomic,strong) StoryModelTool *tool;
 @property (nonatomic,strong) UIView *naviBar;
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -51,12 +54,33 @@ static CGFloat const sectionHeight = 35.0f;
 }
 
 
-
+//加载数据
 -(void)setTableViewData:(id)data {
     self.stories = data;
-    //SectionModel *sm = self.stories.firstObject;
+    SectionModel *sm = self.stories.firstObject;
+    self.top_stories = sm.top_stories;
+    [self setToppictures];
     
 }
+
+//获取顶部图片和文字并设置
+-(void)setToppictures {
+    
+    self.topPictures = [NSMutableArray array];
+    self.topTitles = [NSMutableArray array];
+    
+    for (int i = 0; i < self.top_stories.count; i++) {
+        
+        TopStoriesModel *tsm = self.top_stories[i];
+        [self.topTitles addObject:tsm.title];
+        [self.topPictures addObject:tsm.image];
+    }
+    _cycleScrollView.imageURLStringsGroup = @[self.topPictures[0],self.topPictures[1],self.topPictures[2],self.topPictures[3],self.topPictures[4]];
+    _cycleScrollView.titlesGroup = @[self.topTitles[0],self.topTitles[1],self.topTitles[2],self.topTitles[3],self.topTitles[4]];
+}
+
+
+
 
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
@@ -155,7 +179,7 @@ static CGFloat const sectionHeight = 35.0f;
     _cycleScrollView.titleLabelTextFont = [UIFont fontWithName:@"STHeitiSC-Medium" size:18];
     _cycleScrollView.showPageControl = YES;
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    _cycleScrollView.imageURLStringsGroup = @[@"http://img.taopic.com/uploads/allimg/130501/240451-13050106450911.jpg",@"http://www.diadany.com/img/aHR0cDovL3BpYzE2Lm5pcGljLmNvbS8yMDExMDkxOS84MzcxMjU2XzE5MTQyMDU5NDAwMF8yLmpwZw==.jpg",@"http://imgsrc.baidu.com/forum/pic/item/e4d2cf1349540923d1687ff29258d109b2de499f.jpg",@"http://pic37.nipic.com/20140209/8821914_163234218136_2.jpg"];
+    
     [self.view addSubview:_cycleScrollView];
 }
 
@@ -253,6 +277,13 @@ static CGFloat const sectionHeight = 35.0f;
         _stories = [NSMutableArray array];
     }
     return _stories;
+}
+
+-(NSArray *)top_stories {
+    if (!_top_stories) {
+        _top_stories = [NSArray array];
+    }
+    return _top_stories;
 }
 
 @end

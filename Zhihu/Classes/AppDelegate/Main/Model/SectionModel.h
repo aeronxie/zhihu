@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StoriesModel.h"
+#import "TopStoriesModel.h"
 
 @interface SectionModel : NSObject
 /** date 日期 */
