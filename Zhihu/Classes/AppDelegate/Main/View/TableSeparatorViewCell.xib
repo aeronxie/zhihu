@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,7 +16,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rp-w9-WZ3">
                         <rect key="frame" x="15" y="8" width="570" height="28"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="570" id="D8p-VA-8s7"/>
@@ -26,14 +25,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2Rp-w9-WZ3" secondAttribute="bottom" constant="7.5" id="Kzc-1M-F1n"/>
                     <constraint firstItem="2Rp-w9-WZ3" firstAttribute="leading" secondItem="oIu-Bq-NEg" secondAttribute="leading" constant="15" id="Txk-9c-EBq"/>
                     <constraint firstItem="2Rp-w9-WZ3" firstAttribute="top" secondItem="oIu-Bq-NEg" secondAttribute="top" constant="8" id="ymu-oH-CD9"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <color key="backgroundColor" red="1" green="0.56963691650000003" blue="0.071200953839999997" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="dateLabel" destination="2Rp-w9-WZ3" id="ReY-Qa-KMx"/>

@@ -7,8 +7,35 @@
 //
 
 #import "TableContentViewCell.h"
+#import "UIImageView+WebCache.h"
+
+@interface TableContentViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
+@property (weak, nonatomic) IBOutlet UIImageView *multipicImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelConstraint;
+
+@end
 
 @implementation TableContentViewCell
+
+-(void)setStoryModel:(StoriesModel *)storyModel {
+    
+    _storyModel = storyModel;
+    
+    self.contentLabel.text = storyModel.title;
+    
+    NSURL *url = [NSURL URLWithString:storyModel.images[0]];
+    
+    self.titleLabelConstraint.constant = url ? 15 : -70;
+    self.contentImage.hidden = url ? NO : YES;
+    [self.contentImage sd_setImageWithURL:[NSURL URLWithString:storyModel.images[0]] placeholderImage:[UIImage imageNamed:@"News_Avatar"]];
+    
+    self.multipicImageView.hidden = !storyModel.isMutipic;
+    
+    
+}
 
 - (void)awakeFromNib {
     // Initialization code

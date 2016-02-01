@@ -12,22 +12,28 @@
 #import "StoryModelTool.h"
 #import "HeaderView.h"
 #import "SectionModel.h"
+#import "TableContentViewCell.h"
+#import "MJEXtension.h"
 
 
 static CGFloat const rowHeight = 93.0f;
 static CGFloat const sectionHeight = 35.0f;
+static NSString *cellID = @"tableContentViewCell";
 
 @interface PageViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+
 @property (nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong) UIButton *leftNaviButton;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *stories;
+@property (nonatomic,strong) NSArray *main_stories;
 @property (nonatomic,strong) NSArray *top_stories;
 @property (nonatomic,strong) NSMutableArray *topPictures;
 @property (nonatomic,strong) NSMutableArray *topTitles;
 @property (nonatomic,strong) StoryModelTool *tool;
 @property (nonatomic,strong) UIView *naviBar;
 @property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) StoriesModel *storiesModel;
 
 
 
@@ -40,8 +46,9 @@ static CGFloat const sectionHeight = 35.0f;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    [self.view addSubview:self.tableView];
     [self setCycleScrollView];
+    [self.view addSubview:self.tableView];
+
     [self.view addSubview:self.naviBar];
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.leftNaviButton];
@@ -59,6 +66,8 @@ static CGFloat const sectionHeight = 35.0f;
     self.stories = data;
     SectionModel *sm = self.stories.firstObject;
     self.top_stories = sm.top_stories;
+    self.main_stories = sm.stories;
+    
     [self setToppictures];
     
 }
@@ -140,11 +149,20 @@ static CGFloat const sectionHeight = 35.0f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+//    }
+//    cell.textLabel.text = @"hah";
+    
+    TableContentViewCell *cell = (TableContentViewCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TableContentViewCell" owner:self options:nil]lastObject];
     }
-    cell.textLabel.text = @"hah";
+    SectionModel *sm = self.stories.firstObject;
+    
+    //cell.storyModel = sm.stories;
+    
     return cell;
     
 }
@@ -207,6 +225,7 @@ static CGFloat const sectionHeight = 35.0f;
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight - 20)
                                                   style:UITableViewStylePlain];
         _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.rowHeight = rowHeight;
         _tableView.delegate = self;
         _tableView.dataSource = self;

@@ -39,6 +39,7 @@
 		656DB2431C17F8F900155183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656DB2421C17F8F900155183 /* Assets.xcassets */; };
 		656DB2461C17F8F900155183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656DB2441C17F8F900155183 /* LaunchScreen.storyboard */; };
 		65880E891C4104B40048C1CC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65880E881C4104B40048C1CC /* HeaderView.m */; };
+		658EA4581C5F4A6400E4726A /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 658EA4571C5F4A6400E4726A /* DataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,8 @@
 		65880E871C4104B40048C1CC /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		65880E881C4104B40048C1CC /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		65880E8B1C4125400048C1CC /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		658EA4561C5F4A6400E4726A /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		658EA4571C5F4A6400E4726A /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 				656878711C394799003684F1 /* StoryModelTool.m */,
 				656878731C394B33003684F1 /* HttpTool.h */,
 				656878741C394B33003684F1 /* HttpTool.m */,
+				658EA4561C5F4A6400E4726A /* DataSource.h */,
+				658EA4571C5F4A6400E4726A /* DataSource.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				6568783A1C2FB0C3003684F1 /* TableSeparatorViewCell.m in Sources */,
 				652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */,
 				656878401C2FD4E9003684F1 /* NSString+Date.m in Sources */,
+				658EA4581C5F4A6400E4726A /* DataSource.m in Sources */,
 				656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */,
 				651392D91C1AA52C0032FAD1 /* myUILabel.m in Sources */,
 				651392D21C1973D50032FAD1 /* UINavigationBar+Awesome.m in Sources */,

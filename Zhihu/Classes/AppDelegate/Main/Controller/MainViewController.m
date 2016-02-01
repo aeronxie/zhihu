@@ -397,7 +397,7 @@ static NSString *const url = @"http://news.at.zhihu.com/api/4/news/before/";
         NSNumber *rowNumber = [NSNumber numberWithInteger:indexPath.row];
         [self.selectedIndex addObject:rowNumber];
         TableContentViewCell *contentCell = [tableView cellForRowAtIndexPath:indexPath];
-        contentCell.contentLabel.textColor = [UIColor lightGrayColor];
+        //contentCell.contentLabel.textColor = [UIColor lightGrayColor];
     }
     
 }
