@@ -14,13 +14,15 @@
 #import "SectionModel.h"
 #import "TableContentViewCell.h"
 #import "MJEXtension.h"
+#import "DataSource.h"
+#import "TableContentViewCell.h"
 
 
 static CGFloat const rowHeight = 93.0f;
 static CGFloat const sectionHeight = 35.0f;
 static NSString *cellID = @"tableContentViewCell";
 
-@interface PageViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+@interface PageViewController ()<UITableViewDelegate,SDCycleScrollViewDelegate>
 
 @property (nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong) UIButton *leftNaviButton;
@@ -34,6 +36,7 @@ static NSString *cellID = @"tableContentViewCell";
 @property (nonatomic,strong) UIView *naviBar;
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) StoriesModel *storiesModel;
+@property (nonatomic,strong)DataSource *newsArrayDataSource;
 
 
 
@@ -44,27 +47,28 @@ static NSString *cellID = @"tableContentViewCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    
+ 
+    //设置滚动条
     [self setCycleScrollView];
-    [self.view addSubview:self.tableView];
 
-    [self.view addSubview:self.naviBar];
-    [self.view addSubview:self.titleLabel];
-    [self.view addSubview:self.leftNaviButton];
-    
     [self.tool loadNewStoriesWithData:^(id obj) {
-        [self setTableViewData:obj];
-    }];
     
+        [self setTableViewData:obj];
+        [self.view addSubview:self.tableView];
+        [self.view addSubview:_cycleScrollView];
+        [self.view addSubview:self.naviBar];
+        [self.view addSubview:self.titleLabel];
+        [self.view addSubview:self.leftNaviButton];
+
+    }];
+
     
 }
-
-
 //加载数据
 -(void)setTableViewData:(id)data {
     self.stories = data;
     SectionModel *sm = self.stories.firstObject;
+    [self setUpDataSource];
     self.top_stories = sm.top_stories;
     self.main_stories = sm.stories;
     
@@ -128,60 +132,47 @@ static NSString *cellID = @"tableContentViewCell";
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     HeaderView *header = [HeaderView homeHeaderViewWithTableView:tableView];
-    SectionModel *todayStory = self.stories.firstObject;
+    SectionModel *todayStory = self.stories[section];
     header.date = todayStory.date;
     
     return section?header:nil;
 }
 
-#pragma mark - UITableViewDataSource
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
-    
+//设置数据源
+- (void)setUpDataSource{
+    TableViewCellConfigureBlock configureCell = ^(TableContentViewCell *cell, StoriesModel * story) {
+        cell.storyModel = story;        
+    };
+    self.newsArrayDataSource = [[DataSource alloc]initWithItems:self.stories
+                                                      cellIdentifier:cellID
+                                                  configureCellBlock:configureCell];
+    self.tableView.dataSource = self.newsArrayDataSource;
+    [self.tableView registerNib:[UINib nibWithNibName:@"TableContentViewCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:cellID];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
-    
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-//    }
-//    cell.textLabel.text = @"hah";
-    
-    TableContentViewCell *cell = (TableContentViewCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
-    if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"TableContentViewCell" owner:self options:nil]lastObject];
-    }
-    SectionModel *sm = self.stories.firstObject;
-    
-    //cell.storyModel = sm.stories;
-    
-    return cell;
-    
-}
 
 
 #pragma mark - ScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
+    
     CGFloat offSetY = scrollView.contentOffset.y;
-    if (offSetY <= 500) {
-     
-        _naviBar.alpha = offSetY / (kScreenHeight / 3);
-     
-    }else if (offSetY<=0 && offSetY >= -200) {
-        _naviBar.alpha = 0;
-        
+    //上拉刷新
+    if (offSetY > scrollView.contentSize.height - 1.5 * kScreenHeight) {
+        [self.tool loadFormerStoriesWithData:^{
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:self.stories.count - 1] withRowAnimation:UITableViewRowAnimationFade];
+            
+        }];
     }
     
-    //NSLog(@"%f",offSetY);
+    if (offSetY<=0&&offSetY>=-90)  {
+        _naviBar.alpha = 0;
+    }
+    else if(offSetY <= 500) {
+        _naviBar.alpha = offSetY/(kScreenHeight / 3);
+        
+    }
 
 }
 /**
@@ -198,7 +189,6 @@ static NSString *cellID = @"tableContentViewCell";
     _cycleScrollView.showPageControl = YES;
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     
-    [self.view addSubview:_cycleScrollView];
 }
 
 //KVO 监听滑动
@@ -228,7 +218,6 @@ static NSString *cellID = @"tableContentViewCell";
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.rowHeight = rowHeight;
         _tableView.delegate = self;
-        _tableView.dataSource = self;
         _tableView.showsVerticalScrollIndicator = NO;
         [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 
@@ -291,18 +280,18 @@ static NSString *cellID = @"tableContentViewCell";
     return _tool;
 }
 
--(NSMutableArray *)stories {
-    if (!_stories) {
-        _stories = [NSMutableArray array];
-    }
-    return _stories;
-}
-
--(NSArray *)top_stories {
-    if (!_top_stories) {
-        _top_stories = [NSArray array];
-    }
-    return _top_stories;
-}
+//-(NSMutableArray *)stories {
+//    if (!_stories) {
+//        _stories = [NSMutableArray array];
+//    }
+//    return _stories;
+//}
+//
+//-(NSArray *)top_stories {
+//    if (!_top_stories) {
+//        _top_stories = [NSArray array];
+//    }
+//    return _top_stories;
+//}
 
 @end

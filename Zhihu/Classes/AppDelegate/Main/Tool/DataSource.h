@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DataSource : NSObject <UITableViewDataSource>
 typedef void (^TableViewCellConfigureBlock)(id cell, id item);
 
+@interface DataSource : NSObject <UITableViewDataSource>
 
 - (id)initWithItems:(NSArray *)stories
      cellIdentifier:(NSString *)cellIdentifier
- configureCellBlock:(void (^)(id cell,id item))configureCellBlock;
+ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
+
+- (id)initWith:(NSArray *)stories
+     cellIdentifier:(NSString *)cellIdentifier
+ configureCellBlock:(void (^)(id cell,id item))aConfigureCellBlock;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 

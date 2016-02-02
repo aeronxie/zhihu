@@ -20,7 +20,7 @@
 #import "StoriesModel.h"
 
 #import "TableContentViewCell.h"
-#import "TableSeparatorViewCell.h"
+
 #import "UIImageView+WebCache.h"
 
 static NSString *const contentCell = @"tableContentViewCell";

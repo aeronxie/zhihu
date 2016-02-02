@@ -25,10 +25,8 @@
 		6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */; };
 		6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782D1C2F9749003684F1 /* StoriesModel.m */; };
 		656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878361C2FAE19003684F1 /* TableContentViewCell.m */; };
-		6568783A1C2FB0C3003684F1 /* TableSeparatorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878391C2FB0C3003684F1 /* TableSeparatorViewCell.m */; };
 		656878401C2FD4E9003684F1 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568783F1C2FD4E9003684F1 /* NSString+Date.m */; };
 		656878421C313435003684F1 /* TableContentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656878411C313435003684F1 /* TableContentViewCell.xib */; };
-		656878441C3135A5003684F1 /* TableSeparatorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656878431C3135A5003684F1 /* TableSeparatorViewCell.xib */; };
 		6568786B1C392566003684F1 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568786A1C392566003684F1 /* PageViewController.m */; };
 		656878721C394799003684F1 /* StoryModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878711C394799003684F1 /* StoryModelTool.m */; };
 		656878751C394B33003684F1 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878741C394B33003684F1 /* HttpTool.m */; };
@@ -80,12 +78,9 @@
 		6568782D1C2F9749003684F1 /* StoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesModel.m; sourceTree = "<group>"; };
 		656878351C2FAE19003684F1 /* TableContentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableContentViewCell.h; sourceTree = "<group>"; };
 		656878361C2FAE19003684F1 /* TableContentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableContentViewCell.m; sourceTree = "<group>"; };
-		656878381C2FB0C3003684F1 /* TableSeparatorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSeparatorViewCell.h; sourceTree = "<group>"; };
-		656878391C2FB0C3003684F1 /* TableSeparatorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSeparatorViewCell.m; sourceTree = "<group>"; };
 		6568783E1C2FD4E9003684F1 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
 		6568783F1C2FD4E9003684F1 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 		656878411C313435003684F1 /* TableContentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableContentViewCell.xib; sourceTree = "<group>"; };
-		656878431C3135A5003684F1 /* TableSeparatorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSeparatorViewCell.xib; sourceTree = "<group>"; };
 		656878691C392566003684F1 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		6568786A1C392566003684F1 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		656878701C394799003684F1 /* StoryModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryModelTool.h; sourceTree = "<group>"; };
@@ -315,9 +310,6 @@
 				656878351C2FAE19003684F1 /* TableContentViewCell.h */,
 				656878361C2FAE19003684F1 /* TableContentViewCell.m */,
 				656878411C313435003684F1 /* TableContentViewCell.xib */,
-				656878381C2FB0C3003684F1 /* TableSeparatorViewCell.h */,
-				656878391C2FB0C3003684F1 /* TableSeparatorViewCell.m */,
-				656878431C3135A5003684F1 /* TableSeparatorViewCell.xib */,
 				65880E871C4104B40048C1CC /* HeaderView.h */,
 				65880E881C4104B40048C1CC /* HeaderView.m */,
 			);
@@ -452,7 +444,6 @@
 				656DB2431C17F8F900155183 /* Assets.xcassets in Resources */,
 				656DB2411C17F8F900155183 /* Main.storyboard in Resources */,
 				656878421C313435003684F1 /* TableContentViewCell.xib in Resources */,
-				656878441C3135A5003684F1 /* TableSeparatorViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +515,6 @@
 				651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */,
 				6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */,
 				656878721C394799003684F1 /* StoryModelTool.m in Sources */,
-				6568783A1C2FB0C3003684F1 /* TableSeparatorViewCell.m in Sources */,
 				652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */,
 				656878401C2FD4E9003684F1 /* NSString+Date.m in Sources */,
 				658EA4581C5F4A6400E4726A /* DataSource.m in Sources */,

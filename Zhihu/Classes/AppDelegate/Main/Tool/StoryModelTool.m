@@ -10,12 +10,13 @@
 #import "HttpTool.h"
 #import "MJExtension.h"
 #import "SectionModel.h"
+#import <objc/runtime.h>
 
 static  NSString *const baseUrl = @"http://news-at.zhihu.com/api/4/news/latest";
 static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/";
 
 @interface StoryModelTool ()
-@property (nonatomic,strong) NSMutableArray *data;
+@property (nonatomic,strong) NSMutableArray *items;
 @property (nonatomic,assign,getter=isLoading) BOOL loading;
 @property (nonatomic,strong) NSMutableArray *newsIds;
 @property (nonatomic,strong) NSString *date;
@@ -28,12 +29,13 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
     __weak typeof(self) weakSelf = self;
     [HttpTool get:baseUrl parameters:nil success:^(id json) {
         SectionModel *sectionModel = [SectionModel mj_objectWithKeyValues:json];
-        [weakSelf.data addObject:sectionModel];
+        [weakSelf.items addObject:sectionModel];
         //计算ID
         [weakSelf calculteNewsIds];
+
         weakSelf.date = sectionModel.date;
         if (getDataBlock) {
-            getDataBlock(weakSelf.data);
+            getDataBlock(weakSelf.items);
         }
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -47,10 +49,10 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
     
     [HttpTool get:baseUrl parameters:nil success:^(id json) {
         SectionModel *section = [SectionModel mj_objectWithKeyValues:json];
-        [weakSelf.data replaceObjectAtIndex:0 withObject:section];
+        [weakSelf.items replaceObjectAtIndex:0 withObject:section];
         [weakSelf calculteNewsIds];
         if (refreshDataBlock) {
-            refreshDataBlock(weakSelf.data);
+            refreshDataBlock(weakSelf.items);
         }
     } failure:^(NSError *error) {
         
@@ -65,23 +67,26 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
         return;
     }
     self.loading = !self.loading;
-    NSString *newUrl  = [NSString stringWithFormat:@"%@%@",baseUrl,self.date];
+    NSString *newUrl  = [NSString stringWithFormat:@"%@%@",pastUrl,self.date];
+    
     [HttpTool get:newUrl parameters:nil success:^(id json) {
         SectionModel *section = [SectionModel mj_objectWithKeyValues:json];
-        [weakSelf.data addObject:section];
+        [weakSelf.items addObject:section];
         [weakSelf calculteNewsIds];
-        if (refreshDataBlock) {
-            refreshDataBlock();
-        }
+
+        self.date = section.date;
+        refreshDataBlock();
         self.loading = !self.loading;
     } failure:^(NSError *error) {
         
     }];
+    
+    NSLog(@"%lu",(unsigned long)self.items.count);
 }
 
 //计算最新ID
 - (void)calculteNewsIds {
-    self.newsIds = [self.data valueForKeyPath:@"stories.ID"];
+    self.newsIds = [self.items valueForKeyPath:@"stories.ID"];
     NSMutableArray *newArray = [NSMutableArray array];
     for (int i = 0; i<self.newsIds.count; i++) {
         NSArray *array = self.newsIds[i];
@@ -127,12 +132,12 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
 }
 
 
--(NSMutableArray *)data {
+-(NSMutableArray *)items {
     
-    if (!_data) {
-        _data = [NSMutableArray array];
+    if (!_items) {
+        _items = [NSMutableArray array];
         
     }
-    return _data;
+    return _items;
 }
 @end
