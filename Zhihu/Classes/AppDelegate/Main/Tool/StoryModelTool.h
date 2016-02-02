@@ -21,7 +21,7 @@
  *
  *  @param refreshDataBlock 数据
  */
--(void)refreshStoriesWithData:(void(^)(id obj))refreshDataBlock;
+-(void)refreshStoriesWithData:(void(^)())refreshDataBlock;
 /**
  *  加载以前的数据
  *

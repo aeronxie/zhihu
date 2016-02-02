@@ -27,18 +27,18 @@ static NSString *cellID = @"tableContentViewCell";
 
 @property (nonatomic,strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong) RefreshView *refreshView;
+@property (nonatomic,strong) StoryModelTool *tool;
+@property (nonatomic,strong) StoriesModel *storiesModel;
+@property (nonatomic,strong) DataSource *newsArrayDataSource;
 @property (nonatomic,strong) UIButton *leftNaviButton;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *stories;
-@property (nonatomic,strong) NSArray *main_stories;
 @property (nonatomic,strong) NSArray *top_stories;
 @property (nonatomic,strong) NSMutableArray *topPictures;
 @property (nonatomic,strong) NSMutableArray *topTitles;
-@property (nonatomic,strong) StoryModelTool *tool;
 @property (nonatomic,strong) UIView *naviBar;
 @property (nonatomic,strong) UILabel *titleLabel;
-@property (nonatomic,strong) StoriesModel *storiesModel;
-@property (nonatomic,strong)DataSource *newsArrayDataSource;
+
 @property (nonatomic, assign, getter = isRefreshing) BOOL refreshing;
 
 
@@ -74,7 +74,6 @@ static NSString *cellID = @"tableContentViewCell";
     SectionModel *sm = self.stories.firstObject;
     [self setUpDataSource];
     self.top_stories = sm.top_stories;
-    self.main_stories = sm.stories;
     
     [self setToppictures];
     
@@ -142,6 +141,19 @@ static NSString *cellID = @"tableContentViewCell";
     return section?header:nil;
 }
 
+
+//下拉刷新第一组
+-(void)updateData{
+
+    [self.tool refreshStoriesWithData:^{
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        SectionModel *sm = self.stories.firstObject;
+        self.top_stories = sm.top_stories;
+        [self setToppictures];
+    }];
+}
+
+
 //设置数据源
 - (void)setUpDataSource{
     TableViewCellConfigureBlock configureCell = ^(TableContentViewCell *cell, StoriesModel * story) {
@@ -184,7 +196,7 @@ static NSString *cellID = @"tableContentViewCell";
             [_refreshView startAnimation];
             self.refreshing = YES;
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [_refreshView stopAnimation];
                 self.refreshing = NO;
             });
@@ -311,18 +323,6 @@ static NSString *cellID = @"tableContentViewCell";
     return _tool;
 }
 
-//-(NSMutableArray *)stories {
-//    if (!_stories) {
-//        _stories = [NSMutableArray array];
-//    }
-//    return _stories;
-//}
-//
-//-(NSArray *)top_stories {
-//    if (!_top_stories) {
-//        _top_stories = [NSArray array];
-//    }
-//    return _top_stories;
-//}
+
 
 @end

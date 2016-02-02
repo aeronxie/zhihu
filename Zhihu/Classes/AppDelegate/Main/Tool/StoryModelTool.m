@@ -43,7 +43,7 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
     
 }
 //刷新数据
--(void)refreshStoriesWithData:(void (^)(id obj))refreshDataBlock {
+-(void)refreshStoriesWithData:(void (^)())refreshDataBlock {
     
     __weak typeof(self) weakSelf = self;
     
@@ -52,7 +52,7 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
         [weakSelf.items replaceObjectAtIndex:0 withObject:section];
         [weakSelf calculteNewsIds];
         if (refreshDataBlock) {
-            refreshDataBlock(weakSelf.items);
+            refreshDataBlock();
         }
     } failure:^(NSError *error) {
         
