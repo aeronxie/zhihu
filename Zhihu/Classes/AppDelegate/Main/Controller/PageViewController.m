@@ -16,6 +16,7 @@
 #import "MJEXtension.h"
 #import "DataSource.h"
 #import "TableContentViewCell.h"
+#import "RefreshView.h"
 
 
 static CGFloat const rowHeight = 93.0f;
@@ -25,6 +26,7 @@ static NSString *cellID = @"tableContentViewCell";
 @interface PageViewController ()<UITableViewDelegate,SDCycleScrollViewDelegate>
 
 @property (nonatomic,strong) SDCycleScrollView *cycleScrollView;
+@property (nonatomic,strong) RefreshView *refreshView;
 @property (nonatomic,strong) UIButton *leftNaviButton;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *stories;
@@ -37,6 +39,7 @@ static NSString *cellID = @"tableContentViewCell";
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) StoriesModel *storiesModel;
 @property (nonatomic,strong)DataSource *newsArrayDataSource;
+@property (nonatomic, assign, getter = isRefreshing) BOOL refreshing;
 
 
 
@@ -59,6 +62,7 @@ static NSString *cellID = @"tableContentViewCell";
         [self.view addSubview:self.naviBar];
         [self.view addSubview:self.titleLabel];
         [self.view addSubview:self.leftNaviButton];
+       [self.view addSubview:self.refreshView];
 
     }];
 
@@ -153,7 +157,6 @@ static NSString *cellID = @"tableContentViewCell";
 }
 
 
-
 #pragma mark - ScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -168,12 +171,32 @@ static NSString *cellID = @"tableContentViewCell";
     
     if (offSetY<=0&&offSetY>=-90)  {
         _naviBar.alpha = 0;
+        //加载菊花
+        if (-offSetY <= 60) {
+            if (!self.isRefreshing) {
+                [_refreshView drawFromProgress:-offSetY/60];
+            }else {
+                [_refreshView drawFromProgress:0];
+            }
+            
+        }
+        if (-offSetY > 60&&-offSetY<90&&!scrollView.isDragging) {
+            [_refreshView startAnimation];
+            self.refreshing = YES;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [_refreshView stopAnimation];
+                self.refreshing = NO;
+            });
+        }
+        
     }
     else if(offSetY <= 500) {
         _naviBar.alpha = offSetY/(kScreenHeight / 3);
         
     }
 
+    NSLog(@"%f",offSetY);
 }
 /**
  *  设置轮播图片
@@ -271,7 +294,15 @@ static NSString *cellID = @"tableContentViewCell";
     return _leftNaviButton;
 }
 
-
+-(RefreshView *)refreshView {
+    
+    if (!_refreshView) {
+        _refreshView = [[RefreshView alloc]initWithFrame:CGRectMake(self.titleLabel.x - 30, 25, 20, 20)];
+       
+    }
+   
+    return _refreshView;
+}
 
 -(StoryModelTool *)tool {
     if (!_tool) {

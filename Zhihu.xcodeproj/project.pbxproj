@@ -22,6 +22,7 @@
 		652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597031C1805F7006B2A91 /* JSAnimatedImagesView.m */; };
 		6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597091C180724006B2A91 /* LanuchViewController.m */; };
 		6525970F1C18167D006B2A91 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525970E1C18167D006B2A91 /* MainViewController.m */; };
+		653EE1A71C60DD45000169F2 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1A61C60DD45000169F2 /* RefreshView.m */; };
 		6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */; };
 		6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782D1C2F9749003684F1 /* StoriesModel.m */; };
 		656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878361C2FAE19003684F1 /* TableContentViewCell.m */; };
@@ -72,6 +73,8 @@
 		652597091C180724006B2A91 /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
 		6525970D1C18167D006B2A91 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		6525970E1C18167D006B2A91 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		653EE1A51C60DD45000169F2 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
+		653EE1A61C60DD45000169F2 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		656878291C2AB5BC003684F1 /* TopStoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopStoriesModel.h; sourceTree = "<group>"; };
 		6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopStoriesModel.m; sourceTree = "<group>"; };
 		6568782C1C2F9749003684F1 /* StoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesModel.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				656878411C313435003684F1 /* TableContentViewCell.xib */,
 				65880E871C4104B40048C1CC /* HeaderView.h */,
 				65880E881C4104B40048C1CC /* HeaderView.m */,
+				653EE1A51C60DD45000169F2 /* RefreshView.h */,
+				653EE1A61C60DD45000169F2 /* RefreshView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653EE1A71C60DD45000169F2 /* RefreshView.m in Sources */,
 				656878781C394E78003684F1 /* SectionModel.m in Sources */,
 				65880E891C4104B40048C1CC /* HeaderView.m in Sources */,
 				651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */,
@@ -638,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Zhihu/PrefixHeader.pch";
 				INFOPLIST_FILE = Zhihu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -654,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Zhihu/PrefixHeader.pch";
 				INFOPLIST_FILE = Zhihu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
