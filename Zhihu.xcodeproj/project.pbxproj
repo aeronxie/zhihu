@@ -23,6 +23,14 @@
 		6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597091C180724006B2A91 /* LanuchViewController.m */; };
 		6525970F1C18167D006B2A91 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525970E1C18167D006B2A91 /* MainViewController.m */; };
 		653EE1A71C60DD45000169F2 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1A61C60DD45000169F2 /* RefreshView.m */; };
+		653EE1AF1C61E25E000169F2 /* ContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1AE1C61E25E000169F2 /* ContainerController.m */; };
+		653EE1B21C61E393000169F2 /* ToolsTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1B11C61E393000169F2 /* ToolsTabbar.m */; };
+		653EE1B51C61E68C000169F2 /* DetailStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1B41C61E68C000169F2 /* DetailStoryModel.m */; };
+		653EE1B81C61E6C5000169F2 /* StoryTabbarData.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1B71C61E6C5000169F2 /* StoryTabbarData.m */; };
+		653EE1BB1C61EBD0000169F2 /* DetailViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1BA1C61EBD0000169F2 /* DetailViewTool.m */; };
+		653EE1D11C623002000169F2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1D01C623002000169F2 /* DetailViewController.m */; };
+		653EE1D41C6231B6000169F2 /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1D31C6231B6000169F2 /* DetailHeaderView.m */; };
+		653EE1D71C626CCE000169F2 /* DetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1D61C626CCE000169F2 /* DetailFooterView.m */; };
 		6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */; };
 		6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782D1C2F9749003684F1 /* StoriesModel.m */; };
 		656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878361C2FAE19003684F1 /* TableContentViewCell.m */; };
@@ -75,6 +83,22 @@
 		6525970E1C18167D006B2A91 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		653EE1A51C60DD45000169F2 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		653EE1A61C60DD45000169F2 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
+		653EE1AD1C61E25E000169F2 /* ContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerController.h; sourceTree = "<group>"; };
+		653EE1AE1C61E25E000169F2 /* ContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerController.m; sourceTree = "<group>"; };
+		653EE1B01C61E393000169F2 /* ToolsTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsTabbar.h; sourceTree = "<group>"; };
+		653EE1B11C61E393000169F2 /* ToolsTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsTabbar.m; sourceTree = "<group>"; };
+		653EE1B31C61E68C000169F2 /* DetailStoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailStoryModel.h; sourceTree = "<group>"; };
+		653EE1B41C61E68C000169F2 /* DetailStoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailStoryModel.m; sourceTree = "<group>"; };
+		653EE1B61C61E6C5000169F2 /* StoryTabbarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTabbarData.h; sourceTree = "<group>"; };
+		653EE1B71C61E6C5000169F2 /* StoryTabbarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTabbarData.m; sourceTree = "<group>"; };
+		653EE1B91C61EBD0000169F2 /* DetailViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewTool.h; sourceTree = "<group>"; };
+		653EE1BA1C61EBD0000169F2 /* DetailViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewTool.m; sourceTree = "<group>"; };
+		653EE1CF1C623002000169F2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		653EE1D01C623002000169F2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		653EE1D21C6231B6000169F2 /* DetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
+		653EE1D31C6231B6000169F2 /* DetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
+		653EE1D51C626CCE000169F2 /* DetailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFooterView.h; sourceTree = "<group>"; };
+		653EE1D61C626CCE000169F2 /* DetailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFooterView.m; sourceTree = "<group>"; };
 		656878291C2AB5BC003684F1 /* TopStoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopStoriesModel.h; sourceTree = "<group>"; };
 		6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopStoriesModel.m; sourceTree = "<group>"; };
 		6568782C1C2F9749003684F1 /* StoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesModel.h; sourceTree = "<group>"; };
@@ -205,6 +229,7 @@
 		652596F51C180410006B2A91 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				653EE1A81C61DAFB000169F2 /* DetailNews */,
 				651392BF1C1939990032FAD1 /* Catagory */,
 				6525970B1C181667006B2A91 /* Main */,
 				651392CC1C19653D0032FAD1 /* SideMenuViewController */,
@@ -292,6 +317,61 @@
 				6568786A1C392566003684F1 /* PageViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		653EE1A81C61DAFB000169F2 /* DetailNews */ = {
+			isa = PBXGroup;
+			children = (
+				653EE1AC1C61DB1A000169F2 /* Tool */,
+				653EE1A91C61DAFB000169F2 /* Controller */,
+				653EE1AA1C61DAFB000169F2 /* Model */,
+				653EE1AB1C61DAFB000169F2 /* View */,
+			);
+			path = DetailNews;
+			sourceTree = "<group>";
+		};
+		653EE1A91C61DAFB000169F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				653EE1AD1C61E25E000169F2 /* ContainerController.h */,
+				653EE1AE1C61E25E000169F2 /* ContainerController.m */,
+				653EE1CF1C623002000169F2 /* DetailViewController.h */,
+				653EE1D01C623002000169F2 /* DetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		653EE1AA1C61DAFB000169F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				653EE1B31C61E68C000169F2 /* DetailStoryModel.h */,
+				653EE1B41C61E68C000169F2 /* DetailStoryModel.m */,
+				653EE1B61C61E6C5000169F2 /* StoryTabbarData.h */,
+				653EE1B71C61E6C5000169F2 /* StoryTabbarData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		653EE1AB1C61DAFB000169F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				653EE1B01C61E393000169F2 /* ToolsTabbar.h */,
+				653EE1B11C61E393000169F2 /* ToolsTabbar.m */,
+				653EE1D21C6231B6000169F2 /* DetailHeaderView.h */,
+				653EE1D31C6231B6000169F2 /* DetailHeaderView.m */,
+				653EE1D51C626CCE000169F2 /* DetailFooterView.h */,
+				653EE1D61C626CCE000169F2 /* DetailFooterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		653EE1AC1C61DB1A000169F2 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				653EE1B91C61EBD0000169F2 /* DetailViewTool.h */,
+				653EE1BA1C61EBD0000169F2 /* DetailViewTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		656878281C2AB597003684F1 /* Model */ = {
@@ -509,6 +589,9 @@
 			files = (
 				653EE1A71C60DD45000169F2 /* RefreshView.m in Sources */,
 				656878781C394E78003684F1 /* SectionModel.m in Sources */,
+				653EE1B51C61E68C000169F2 /* DetailStoryModel.m in Sources */,
+				653EE1D11C623002000169F2 /* DetailViewController.m in Sources */,
+				653EE1D71C626CCE000169F2 /* DetailFooterView.m in Sources */,
 				65880E891C4104B40048C1CC /* HeaderView.m in Sources */,
 				651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */,
 				651392CF1C1965750032FAD1 /* SideMenuViewController.m in Sources */,
@@ -519,20 +602,25 @@
 				6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */,
 				651392C21C19399F0032FAD1 /* UIView+Extension.m in Sources */,
 				651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */,
+				653EE1AF1C61E25E000169F2 /* ContainerController.m in Sources */,
 				6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */,
 				656878721C394799003684F1 /* StoryModelTool.m in Sources */,
 				652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */,
+				653EE1D41C6231B6000169F2 /* DetailHeaderView.m in Sources */,
+				653EE1BB1C61EBD0000169F2 /* DetailViewTool.m in Sources */,
 				656878401C2FD4E9003684F1 /* NSString+Date.m in Sources */,
 				658EA4581C5F4A6400E4726A /* DataSource.m in Sources */,
 				656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */,
 				651392D91C1AA52C0032FAD1 /* myUILabel.m in Sources */,
 				651392D21C1973D50032FAD1 /* UINavigationBar+Awesome.m in Sources */,
+				653EE1B21C61E393000169F2 /* ToolsTabbar.m in Sources */,
 				656878751C394B33003684F1 /* HttpTool.m in Sources */,
 				6568786B1C392566003684F1 /* PageViewController.m in Sources */,
 				6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */,
 				652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */,
 				651392E11C1AF0A10032FAD1 /* ItemsView.m in Sources */,
 				656DB2381C17F8F900155183 /* main.m in Sources */,
+				653EE1B81C61E6C5000169F2 /* StoryTabbarData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,7 +62,7 @@ static NSString *cellID = @"tableContentViewCell";
         [self.view addSubview:self.naviBar];
         [self.view addSubview:self.titleLabel];
         [self.view addSubview:self.leftNaviButton];
-       [self.view addSubview:self.refreshView];
+        [self.view addSubview:self.refreshView];
 
     }];
 
@@ -195,8 +195,10 @@ static NSString *cellID = @"tableContentViewCell";
         if (-offSetY > 60&&-offSetY<90&&!scrollView.isDragging) {
             [_refreshView startAnimation];
             self.refreshing = YES;
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+           [self updateData];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
                 [_refreshView stopAnimation];
                 self.refreshing = NO;
             });
@@ -323,6 +325,18 @@ static NSString *cellID = @"tableContentViewCell";
     return _tool;
 }
 
+-(NSMutableArray *)stories {
+    if (!_stories) {
+        _stories = [NSMutableArray array];
+    }
+    return _stories;
+}
 
+-(NSArray *)top_stories {
+    if (!_top_stories) {
+        _top_stories = [NSArray array];
+    }
+    return _top_stories;
+}
 
 @end
