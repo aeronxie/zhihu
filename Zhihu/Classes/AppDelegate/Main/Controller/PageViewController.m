@@ -17,6 +17,7 @@
 #import "DataSource.h"
 #import "TableContentViewCell.h"
 #import "RefreshView.h"
+#import "ContainerController.h"
 
 
 static CGFloat const rowHeight = 93.0f;
@@ -108,7 +109,9 @@ static NSString *cellID = @"tableContentViewCell";
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSLog(@"ssss");
+    StoriesModel *storyModel = [self.newsArrayDataSource itemAtIndexPath:indexPath];
+    [self pushViewDetailViewControllerWithStoryModel:storyModel];
     
 }
 
@@ -139,6 +142,13 @@ static NSString *cellID = @"tableContentViewCell";
     header.date = todayStory.date;
     
     return section?header:nil;
+}
+
+- (void)pushViewDetailViewControllerWithStoryModel:(StoriesModel *)storyModel{
+    ContainerController *container = [[ContainerController alloc] init];
+    container.tool = self.tool;
+    container.storyId = storyModel.ID;
+    [self.navigationController pushViewController:container animated:YES];
 }
 
 

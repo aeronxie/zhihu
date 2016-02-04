@@ -11,13 +11,15 @@
 @interface StoriesModel : NSObject
 
 /** id  内容id */
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, assign) NSNumber *ID;
 /** title 新闻标题 */
 @property (nonatomic, copy) NSString *title;
 /** 类型 */
 @property (nonatomic, assign) NSInteger type;
-/** image  界面顶部的图片 */
+/** image  图片地址 */
 @property (nonatomic, strong) NSArray *images;
+/** image  界面顶部的图片 */
+@property (nonatomic, strong) NSString *image;
 /** 供 Google Analytics 使用 */
 @property (nonatomic, copy) NSString *ga_prefix;
 /** multipic   是否多图 */

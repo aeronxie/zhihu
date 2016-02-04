@@ -77,12 +77,13 @@
     
     PageViewController *main = [[PageViewController alloc]init];
     
-    //UINavigationController *VC = [[UINavigationController alloc]initWithRootViewController:main];
+    UINavigationController *naviVc = [[UINavigationController alloc]initWithRootViewController:main];
+    naviVc.navigationBarHidden = YES;
     
     [self.window makeKeyAndVisible];
     
     SideMenuViewController *sideVc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"slider"];
-    SWRevealViewController *swVc = [[SWRevealViewController alloc]initWithRearViewController:sideVc frontViewController:main];
+    SWRevealViewController *swVc = [[SWRevealViewController alloc]initWithRearViewController:sideVc frontViewController:naviVc];
     swVc.rearViewRevealWidth = 250;
     self.window.rootViewController = swVc;
 

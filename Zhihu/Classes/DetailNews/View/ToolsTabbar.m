@@ -9,6 +9,7 @@
 #import "ToolsTabbar.h"
 #import "DetailStoryModel.h"
 #import "StoryTabbarData.h"
+#import "DetailViewTool.h"
 
 @interface ToolsTabbar ()
 
@@ -82,6 +83,18 @@
 }
 
 #pragma mark - getter and setter
+- (void)setId:(NSNumber *)number{
+    _id = number;
+    
+    [DetailViewTool getStoryToolDataWithStoryId:number Callback:^(StoryTabbarData *obj) {
+        self.commentLabel.text = [NSString stringWithFormat:@"%@",obj.comments];
+        self.praiseLabel.text = [NSString stringWithFormat:@"%@",obj.popularity];
+    }];
+    
+    
+}
+
+
 - (UIButton *)backBtn{
     if (_backBtn == nil) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
