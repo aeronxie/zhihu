@@ -11,7 +11,7 @@
 
 @interface TableContentViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
 @property (weak, nonatomic) IBOutlet UIImageView *multipicImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelConstraint;
@@ -49,10 +49,10 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     // Configure the view for the selected state
     
+    
 }
 //重写取消高亮效果
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-    
-}
+    }
 
 @end

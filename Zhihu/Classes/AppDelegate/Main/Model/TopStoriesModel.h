@@ -10,7 +10,7 @@
 
 @interface TopStoriesModel : NSObject
 
-@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, strong) NSNumber *ID;
 
 @property (nonatomic, copy) NSString *title;
 

@@ -39,6 +39,7 @@ static NSString *cellID = @"tableContentViewCell";
 @property (nonatomic,strong) NSMutableArray *topTitles;
 @property (nonatomic,strong) UIView *naviBar;
 @property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) NSMutableArray *topIds;
 
 @property (nonatomic, assign, getter = isRefreshing) BOOL refreshing;
 
@@ -85,12 +86,14 @@ static NSString *cellID = @"tableContentViewCell";
     
     self.topPictures = [NSMutableArray array];
     self.topTitles = [NSMutableArray array];
+    self.topIds = [NSMutableArray array];
     
     for (int i = 0; i < self.top_stories.count; i++) {
         
         TopStoriesModel *tsm = self.top_stories[i];
         [self.topTitles addObject:tsm.title];
         [self.topPictures addObject:tsm.image];
+        [self.topIds addObject:tsm.ID];
     }
     _cycleScrollView.imageURLStringsGroup = @[self.topPictures[0],self.topPictures[1],self.topPictures[2],self.topPictures[3],self.topPictures[4]];
     _cycleScrollView.titlesGroup = @[self.topTitles[0],self.topTitles[1],self.topTitles[2],self.topTitles[3],self.topTitles[4]];
@@ -102,14 +105,16 @@ static NSString *cellID = @"tableContentViewCell";
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     
-    
+    [self pushViewDetailViewControllerWithStoryID:index];
     
 }
 
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"ssss");
+    
+    TableContentViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentLabel.textColor = [UIColor lightGrayColor];
     StoriesModel *storyModel = [self.newsArrayDataSource itemAtIndexPath:indexPath];
     [self pushViewDetailViewControllerWithStoryModel:storyModel];
     
@@ -144,6 +149,11 @@ static NSString *cellID = @"tableContentViewCell";
     return section?header:nil;
 }
 
+/**
+ *  创建详细页面控制器
+ *
+ *  @param storyModel 数据
+ */
 - (void)pushViewDetailViewControllerWithStoryModel:(StoriesModel *)storyModel{
     ContainerController *container = [[ContainerController alloc] init];
     container.tool = self.tool;
@@ -151,6 +161,17 @@ static NSString *cellID = @"tableContentViewCell";
     [self.navigationController pushViewController:container animated:YES];
 }
 
+/**
+ *  创建顶部滚动条详细控制器
+ *
+ *  @param index 点了是哪个
+ */
+-(void)pushViewDetailViewControllerWithStoryID:(NSInteger)index {
+    ContainerController *container = [[ContainerController alloc] init];
+    container.storyId = self.topIds[index];
+    [self.navigationController pushViewController:container animated:YES];
+
+}
 
 //下拉刷新第一组
 -(void)updateData{
@@ -219,8 +240,6 @@ static NSString *cellID = @"tableContentViewCell";
         _naviBar.alpha = offSetY/(kScreenHeight / 3);
         
     }
-
-    NSLog(@"%f",offSetY);
 }
 /**
  *  设置轮播图片
@@ -348,5 +367,7 @@ static NSString *cellID = @"tableContentViewCell";
     }
     return _top_stories;
 }
+
+
 
 @end

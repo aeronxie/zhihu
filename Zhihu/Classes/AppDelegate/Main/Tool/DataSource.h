@@ -16,9 +16,6 @@ typedef void (^TableViewCellConfigureBlock)(id cell, id item);
      cellIdentifier:(NSString *)cellIdentifier
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
 
-- (id)initWith:(NSArray *)stories
-     cellIdentifier:(NSString *)cellIdentifier
- configureCellBlock:(void (^)(id cell,id item))aConfigureCellBlock;
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 

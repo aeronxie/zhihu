@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_Morepic" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-td-5yW">
-                        <rect key="frame" x="273" y="60.5" width="30" height="15"/>
+                        <rect key="frame" x="274" y="61.5" width="30" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="DCc-1d-Hff"/>
                             <constraint firstAttribute="height" constant="15" id="ebd-gb-bPf"/>
@@ -39,10 +39,10 @@
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="gOF-td-5yW" secondAttribute="bottom" constant="6" id="Gee-Ik-0UK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gOF-td-5yW" secondAttribute="bottom" constant="5" id="Gee-Ik-0UK"/>
                     <constraint firstItem="LVE-Fr-ECo" firstAttribute="top" secondItem="DED-2n-qMp" secondAttribute="topMargin" constant="5" id="IQa-aC-ent"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LVE-Fr-ECo" secondAttribute="bottom" constant="4.5" id="OiG-KJ-6iv"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="gOF-td-5yW" secondAttribute="trailing" constant="8" id="WQi-fn-cLx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gOF-td-5yW" secondAttribute="trailing" constant="7" id="WQi-fn-cLx"/>
                     <constraint firstItem="LVE-Fr-ECo" firstAttribute="leading" secondItem="5dv-tg-Z1R" secondAttribute="trailing" constant="15" id="Wr6-Px-rBG"/>
                     <constraint firstItem="5dv-tg-Z1R" firstAttribute="leading" secondItem="DED-2n-qMp" secondAttribute="leadingMargin" constant="6" id="ce2-Sc-jUO"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LVE-Fr-ECo" secondAttribute="trailing" constant="6" id="eaJ-lR-YzL"/>
@@ -52,7 +52,7 @@
             <color key="backgroundColor" red="0.13788879139999999" green="0.29346353780000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="contentImage" destination="LVE-Fr-ECo" id="uh2-YR-wv9"/>
-                <outlet property="contentLabel" destination="5dv-tg-Z1R" id="rUY-ZQ-ExC"/>
+                <outlet property="contentLabel" destination="5dv-tg-Z1R" id="5Qu-xZ-XEE"/>
                 <outlet property="multipicImageView" destination="gOF-td-5yW" id="rj8-cf-3fx"/>
                 <outlet property="titleLabelConstraint" destination="Wr6-Px-rBG" id="YQe-sC-MgL"/>
             </connections>

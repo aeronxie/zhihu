@@ -53,7 +53,7 @@
  */
 - (NSNumber *)getNextNewsWithId:(NSNumber *)number;
 /**
- *  获取下一条新闻ID
+ *  获取上一条新闻ID
  *
  *  @param number ID
  *

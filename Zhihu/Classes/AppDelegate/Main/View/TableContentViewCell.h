@@ -12,5 +12,5 @@
 @interface TableContentViewCell : UITableViewCell
 
 @property (nonatomic,strong) StoriesModel *storyModel;
-
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @end
