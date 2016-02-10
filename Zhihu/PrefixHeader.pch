@@ -12,7 +12,7 @@
 #import "UIView+Extension.h"
 #import "UINavigationBar+Awesome.h"
 #import "NSString+Date.h"
-#import "Constant.h"
+
 
 #define kScreenBounds [UIScreen mainScreen].bounds
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height

@@ -33,6 +33,7 @@
 		653EE1D71C626CCE000169F2 /* DetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1D61C626CCE000169F2 /* DetailFooterView.m */; };
 		653EE1DA1C632AFC000169F2 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1D91C632AFC000169F2 /* TopView.m */; };
 		653EE1DC1C632B12000169F2 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653EE1DB1C632B12000169F2 /* TopView.xib */; };
+		6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6541408D1C6A3F57007EEE0A /* UIViewController+Extension.m */; };
 		6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */; };
 		6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6568782D1C2F9749003684F1 /* StoriesModel.m */; };
 		656878371C2FAE19003684F1 /* TableContentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 656878361C2FAE19003684F1 /* TableContentViewCell.m */; };
@@ -104,6 +105,8 @@
 		653EE1D81C632AFC000169F2 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
 		653EE1D91C632AFC000169F2 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
 		653EE1DB1C632B12000169F2 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		6541408C1C6A3F57007EEE0A /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		6541408D1C6A3F57007EEE0A /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		656878291C2AB5BC003684F1 /* TopStoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopStoriesModel.h; sourceTree = "<group>"; };
 		6568782A1C2AB5BC003684F1 /* TopStoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopStoriesModel.m; sourceTree = "<group>"; };
 		6568782C1C2F9749003684F1 /* StoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesModel.h; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		656DB2471C17F8F900155183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65880E871C4104B40048C1CC /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		65880E881C4104B40048C1CC /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
-		65880E8B1C4125400048C1CC /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		658EA4561C5F4A6400E4726A /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		658EA4571C5F4A6400E4726A /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,8 @@
 		651392BF1C1939990032FAD1 /* Catagory */ = {
 			isa = PBXGroup;
 			children = (
+				6541408C1C6A3F57007EEE0A /* UIViewController+Extension.h */,
+				6541408D1C6A3F57007EEE0A /* UIViewController+Extension.m */,
 				651392D01C1973D50032FAD1 /* UINavigationBar+Awesome.h */,
 				651392D11C1973D50032FAD1 /* UINavigationBar+Awesome.m */,
 				651392C01C19399F0032FAD1 /* UIView+Extension.h */,
@@ -458,7 +462,6 @@
 			children = (
 				656DB2371C17F8F900155183 /* main.m */,
 				651392C31C193A230032FAD1 /* PrefixHeader.pch */,
-				65880E8B1C4125400048C1CC /* Constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
 				6525970F1C18167D006B2A91 /* MainViewController.m in Sources */,
 				651392C71C1941740032FAD1 /* GradientView.m in Sources */,
+				6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */,
 				6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */,
 				651392C21C19399F0032FAD1 /* UIView+Extension.m in Sources */,
 				651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */,
