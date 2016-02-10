@@ -18,6 +18,13 @@
 		651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392DB1C1AA5660032FAD1 /* UIImage+ImageEffects.m */; };
 		651392E11C1AF0A10032FAD1 /* ItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392E01C1AF0A10032FAD1 /* ItemsView.m */; };
 		651392E31C1AF0C30032FAD1 /* ItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651392E21C1AF0C30032FAD1 /* ItemsView.xib */; };
+		6518AFE41C6B780C0083248F /* EditorMoedel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFD81C6B780C0083248F /* EditorMoedel.m */; };
+		6518AFE51C6B780C0083248F /* ThemeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFDA1C6B780C0083248F /* ThemeNewsModel.m */; };
+		6518AFE61C6B780C0083248F /* ThemeNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFDD1C6B780C0083248F /* ThemeNewsTool.m */; };
+		6518AFE91C6B780C0083248F /* TopImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFE31C6B780C0083248F /* TopImageView.m */; };
+		6518AFEC1C6B78380083248F /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFEB1C6B78380083248F /* ThemeViewController.m */; };
+		6518AFEF1C6B87E10083248F /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFEE1C6B87E10083248F /* Theme.m */; };
+		6518AFF41C6B90C40083248F /* ThemeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFF31C6B90C40083248F /* ThemeTool.m */; };
 		652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 652596FF1C1805CC006B2A91 /* MSWeakTimer.m */; };
 		652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597031C1805F7006B2A91 /* JSAnimatedImagesView.m */; };
 		6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597091C180724006B2A91 /* LanuchViewController.m */; };
@@ -76,6 +83,20 @@
 		651392DF1C1AF0A10032FAD1 /* ItemsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsView.h; sourceTree = "<group>"; };
 		651392E01C1AF0A10032FAD1 /* ItemsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsView.m; sourceTree = "<group>"; };
 		651392E21C1AF0C30032FAD1 /* ItemsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsView.xib; sourceTree = "<group>"; };
+		6518AFD71C6B780C0083248F /* EditorMoedel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorMoedel.h; sourceTree = "<group>"; };
+		6518AFD81C6B780C0083248F /* EditorMoedel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorMoedel.m; sourceTree = "<group>"; };
+		6518AFD91C6B780C0083248F /* ThemeNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNewsModel.h; sourceTree = "<group>"; };
+		6518AFDA1C6B780C0083248F /* ThemeNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNewsModel.m; sourceTree = "<group>"; };
+		6518AFDC1C6B780C0083248F /* ThemeNewsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNewsTool.h; sourceTree = "<group>"; };
+		6518AFDD1C6B780C0083248F /* ThemeNewsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeNewsTool.m; sourceTree = "<group>"; };
+		6518AFE21C6B780C0083248F /* TopImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopImageView.h; sourceTree = "<group>"; };
+		6518AFE31C6B780C0083248F /* TopImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopImageView.m; sourceTree = "<group>"; };
+		6518AFEA1C6B78380083248F /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeViewController.h; sourceTree = "<group>"; };
+		6518AFEB1C6B78380083248F /* ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeViewController.m; sourceTree = "<group>"; };
+		6518AFED1C6B87E10083248F /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Theme.h; path = ../../../../ThemePage/Model/Theme.h; sourceTree = "<group>"; };
+		6518AFEE1C6B87E10083248F /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Theme.m; path = ../../../../ThemePage/Model/Theme.m; sourceTree = "<group>"; };
+		6518AFF21C6B90C40083248F /* ThemeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeTool.h; sourceTree = "<group>"; };
+		6518AFF31C6B90C40083248F /* ThemeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeTool.m; sourceTree = "<group>"; };
 		652596FE1C1805CC006B2A91 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
 		652596FF1C1805CC006B2A91 /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
 		652597021C1805F7006B2A91 /* JSAnimatedImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAnimatedImagesView.h; sourceTree = "<group>"; };
@@ -198,6 +219,8 @@
 		651392CC1C19653D0032FAD1 /* SideMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6518AFF11C6B90920083248F /* Model */,
+				6518AFF01C6B90810083248F /* Tools */,
 				651392DD1C1AEFD50032FAD1 /* Controller */,
 				651392DE1C1AEFD50032FAD1 /* View */,
 			);
@@ -235,9 +258,77 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6518AFD41C6B77F00083248F /* ThemePage */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFD51C6B780C0083248F /* Controller */,
+				6518AFD61C6B780C0083248F /* Model */,
+				6518AFDB1C6B780C0083248F /* Tools */,
+				6518AFDE1C6B780C0083248F /* View */,
+			);
+			path = ThemePage;
+			sourceTree = "<group>";
+		};
+		6518AFD51C6B780C0083248F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFEA1C6B78380083248F /* ThemeViewController.h */,
+				6518AFEB1C6B78380083248F /* ThemeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6518AFD61C6B780C0083248F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFD71C6B780C0083248F /* EditorMoedel.h */,
+				6518AFD81C6B780C0083248F /* EditorMoedel.m */,
+				6518AFD91C6B780C0083248F /* ThemeNewsModel.h */,
+				6518AFDA1C6B780C0083248F /* ThemeNewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6518AFDB1C6B780C0083248F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFDC1C6B780C0083248F /* ThemeNewsTool.h */,
+				6518AFDD1C6B780C0083248F /* ThemeNewsTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		6518AFDE1C6B780C0083248F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFE21C6B780C0083248F /* TopImageView.h */,
+				6518AFE31C6B780C0083248F /* TopImageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6518AFF01C6B90810083248F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFF21C6B90C40083248F /* ThemeTool.h */,
+				6518AFF31C6B90C40083248F /* ThemeTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		6518AFF11C6B90920083248F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6518AFED1C6B87E10083248F /* Theme.h */,
+				6518AFEE1C6B87E10083248F /* Theme.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		652596F51C180410006B2A91 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6518AFD41C6B77F00083248F /* ThemePage */,
 				653EE1A81C61DAFB000169F2 /* DetailNews */,
 				651392BF1C1939990032FAD1 /* Catagory */,
 				6525970B1C181667006B2A91 /* Main */,
@@ -603,9 +694,11 @@
 				656878781C394E78003684F1 /* SectionModel.m in Sources */,
 				653EE1B51C61E68C000169F2 /* DetailStoryModel.m in Sources */,
 				653EE1D11C623002000169F2 /* DetailViewController.m in Sources */,
+				6518AFEC1C6B78380083248F /* ThemeViewController.m in Sources */,
 				653EE1D71C626CCE000169F2 /* DetailFooterView.m in Sources */,
 				65880E891C4104B40048C1CC /* HeaderView.m in Sources */,
 				651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */,
+				6518AFE51C6B780C0083248F /* ThemeNewsModel.m in Sources */,
 				651392CF1C1965750032FAD1 /* SideMenuViewController.m in Sources */,
 				651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */,
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
@@ -614,13 +707,18 @@
 				6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */,
 				6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */,
 				651392C21C19399F0032FAD1 /* UIView+Extension.m in Sources */,
+				6518AFE91C6B780C0083248F /* TopImageView.m in Sources */,
+				6518AFF41C6B90C40083248F /* ThemeTool.m in Sources */,
 				651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */,
 				653EE1AF1C61E25E000169F2 /* ContainerController.m in Sources */,
 				6568782B1C2AB5BC003684F1 /* TopStoriesModel.m in Sources */,
+				6518AFEF1C6B87E10083248F /* Theme.m in Sources */,
 				656878721C394799003684F1 /* StoryModelTool.m in Sources */,
 				652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */,
 				653EE1D41C6231B6000169F2 /* DetailHeaderView.m in Sources */,
 				653EE1BB1C61EBD0000169F2 /* DetailViewTool.m in Sources */,
+				6518AFE61C6B780C0083248F /* ThemeNewsTool.m in Sources */,
+				6518AFE41C6B780C0083248F /* EditorMoedel.m in Sources */,
 				653EE1DA1C632AFC000169F2 /* TopView.m in Sources */,
 				656878401C2FD4E9003684F1 /* NSString+Date.m in Sources */,
 				658EA4581C5F4A6400E4726A /* DataSource.m in Sources */,

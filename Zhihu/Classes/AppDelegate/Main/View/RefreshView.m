@@ -67,11 +67,6 @@
     
 }
 
--(void)hiddenView {
-    _whiteCircleLayer.opacity = 0.f;
-    _grayCircleLayer.opacity = 0.f;
-}
-
 - (void)startAnimation {
     [_indicatorView startAnimating];
 }

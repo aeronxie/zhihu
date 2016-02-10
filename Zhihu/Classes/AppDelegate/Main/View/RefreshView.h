@@ -12,5 +12,5 @@
 - (void)drawFromProgress:(CGFloat)progress;
 - (void)startAnimation;
 - (void)stopAnimation;
--(void)hiddenView;
+
 @end
