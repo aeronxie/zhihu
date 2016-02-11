@@ -62,6 +62,14 @@ static NSString *cellID = @"ThemeCell";
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        return 40.f;
+    }else {
+        return 93.f;
+    }
+}
 
 /**
  *  创建详细页面控制器
@@ -81,16 +89,18 @@ static NSString *cellID = @"ThemeCell";
         cell.storyModel = story; 
     
     };
-    self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories
-                                                 cellIdentifier:cellID
-                                             configureCellBlock:configureCell];
+//    self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories
+//                                                 cellIdentifier:cellID
+//                                             configureCellBlock:configureCell];
+    
+    self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories editors:self.themeNews.editors cellIdentifier:cellID configureCellBlock:configureCell];
     self.tableView.dataSource = self.tableViewDataSource;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ThemeCell"
                                                bundle:nil]
          forCellReuseIdentifier:cellID];
     [self.tableView reloadData];
-    self.tableView.rowHeight = 93;
+  
 }
 
 //刷新数据

@@ -12,7 +12,7 @@ typedef void (^ThemeCellConfigureBlock)(id cell, id item);
 
 @interface ThemeData : NSObject <UITableViewDataSource>
 
-- (id)initWithItems:(NSArray *)stories
+- (id)initWithItems:(NSArray *)anItems editors:(NSArray *)editors
      cellIdentifier:(NSString *)cellIdentifier
  configureCellBlock:(ThemeCellConfigureBlock)aConfigureCellBlock;
 
