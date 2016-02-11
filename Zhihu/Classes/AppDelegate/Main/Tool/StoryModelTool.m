@@ -86,7 +86,7 @@ static  NSString *const pastUrl = @"http://news-at.zhihu.com/api/4/news/before/"
 
 //计算最新ID
 - (void)calculteNewsIds {
-    self.newsIds = [self.items valueForKeyPath:@"stories.ID"];
+    self.newsIds = [self.items valueForKeyPath:@"stories.id"];
     NSMutableArray *newArray = [NSMutableArray array];
     for (int i = 0; i<self.newsIds.count; i++) {
         NSArray *array = self.newsIds[i];

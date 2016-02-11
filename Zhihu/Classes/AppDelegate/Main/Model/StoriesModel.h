@@ -11,7 +11,7 @@
 @interface StoriesModel : NSObject
 
 /** id  内容id */
-@property (nonatomic, strong) NSNumber *ID;
+@property (nonatomic, strong) NSNumber *id;
 /** title 新闻标题 */
 @property (nonatomic, copy) NSString *title;
 /** 类型 */

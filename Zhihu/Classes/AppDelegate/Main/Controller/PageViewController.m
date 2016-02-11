@@ -93,7 +93,7 @@ static NSString *cellID = @"tableContentViewCell";
         TopStoriesModel *tsm = self.top_stories[i];
         [self.topTitles addObject:tsm.title];
         [self.topPictures addObject:tsm.image];
-        [self.topIds addObject:tsm.ID];
+        [self.topIds addObject:tsm.id];
     }
     _cycleScrollView.imageURLStringsGroup = @[self.topPictures[0],self.topPictures[1],self.topPictures[2],self.topPictures[3],self.topPictures[4]];
     _cycleScrollView.titlesGroup = @[self.topTitles[0],self.topTitles[1],self.topTitles[2],self.topTitles[3],self.topTitles[4]];
@@ -157,7 +157,7 @@ static NSString *cellID = @"tableContentViewCell";
 - (void)pushViewDetailViewControllerWithStoryModel:(StoriesModel *)storyModel{
     ContainerController *container = [[ContainerController alloc] init];
     container.tool = self.tool;
-    container.storyId = storyModel.ID;
+    container.storyId = storyModel.id;
     [self.navigationController pushViewController:container animated:YES];
 }
 
@@ -368,6 +368,10 @@ static NSString *cellID = @"tableContentViewCell";
     return _top_stories;
 }
 
-
+#warning 不销毁的话会报错（key value observers were still registered with it）
+-(void)dealloc {
+    
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
+}
 
 @end

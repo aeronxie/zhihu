@@ -9,18 +9,20 @@
 #import "ThemeViewController.h"
 #import "TopImageView.h"
 #import "ThemeNewsTool.h"
-#import "DataSource.h"
+#import "ThemeData.h"
 #import "RefreshView.h"
 #import "SWRevealViewController.h"
 #import "StoriesModel.h"
-#import "TableContentViewCell.h"
+#import "ThemeCell.h"
 #import "ContainerController.h"
 #import "Theme.h"
 #import "ThemeNewsModel.h"
 #import "UIImageView+WebCache.h"
 
-static NSString *cellID = @"tableContentViewCell";
+static NSString *cellID = @"ThemeCell";
+
 @interface ThemeViewController ()<UITableViewDelegate>
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) TopImageView *topView;
@@ -28,11 +30,10 @@ static NSString *cellID = @"tableContentViewCell";
 @property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, strong) RefreshView *refreshView;
 @property (nonatomic, strong) ThemeNewsModel *themeNews;
-
-@property (nonatomic, strong) DataSource *tableViewDataSource;
-
+@property (nonatomic, strong) ThemeData *tableViewDataSource;
 @property (nonatomic, strong) ThemeNewsTool *tool;
 @property (nonatomic, assign, getter = isRefreshing) BOOL refreshing;
+
 @end
 
 @implementation ThemeViewController
@@ -47,28 +48,20 @@ static NSString *cellID = @"tableContentViewCell";
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.backBtn];
     [self.view addSubview:self.refreshView];
+    
 }
-
-- (void)dealloc{
-    [self.tableView removeObserver:self.topView forKeyPath:@"contentOffset"];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TableContentViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    ThemeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentLabel.textColor = [UIColor lightGrayColor];
     StoriesModel *storyModel = [self.tableViewDataSource itemAtIndexPath:indexPath];
     [self pushViewDetailViewControllerWithStoryModel:storyModel];
     
 }
+
 
 /**
  *  创建详细页面控制器
@@ -76,35 +69,49 @@ static NSString *cellID = @"tableContentViewCell";
 - (void)pushViewDetailViewControllerWithStoryModel:(StoriesModel *)storyModel{
     ContainerController *container = [[ContainerController alloc] init];
     container.tool = self.tool;
-    container.storyId = storyModel.ID;
+    container.storyId = storyModel.id;
     [self.navigationController pushViewController:container animated:YES];
 }
 
 
 //设置数据源
 - (void)setUpDataSource{
-    TableViewCellConfigureBlock configureCell = ^(TableContentViewCell *cell, StoriesModel * story) {
+    ThemeCellConfigureBlock configureCell = ^(ThemeCell *cell, StoriesModel * story) {
         story.multipic = NO;
-        cell.storyModel = story;
+        cell.storyModel = story; 
     
     };
-    self.tableViewDataSource = [[DataSource alloc]initWithItems:self.themeNews.stories
+    self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories
                                                  cellIdentifier:cellID
                                              configureCellBlock:configureCell];
     self.tableView.dataSource = self.tableViewDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"TableContentViewCell"
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ThemeCell"
                                                bundle:nil]
          forCellReuseIdentifier:cellID];
+    [self.tableView reloadData];
+    self.tableView.rowHeight = 93;
 }
 
 //刷新数据
 - (void)updateData{
-    [self.tool getThemeNewsWithId:self.theme.id SuccessfulBlock:^(id obj) {
+    [self.tool getThemeNewsWithId:self.theme.ID SuccessfulBlock:^(id obj) {
         self.themeNews = obj;
         [self.topView sd_setImageWithURL:[NSURL URLWithString:self.themeNews.image]];
         [self setUpDataSource];
         [self.refreshView stopAnimation];
     }];
+}
+
+//改变状态栏
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+
+- (void)dealloc{
+    NSLog(@"ThemeViewController  Dealloc");
+    [self.tableView removeObserver:self.topView forKeyPath:@"contentOffset"];
 }
 
 #pragma mark - ScrollViewDelegate
@@ -123,9 +130,9 @@ static NSString *cellID = @"tableContentViewCell";
         [_refreshView startAnimation];
         self.refreshing = YES;
         
-        [self updateData];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
+            [self updateData];
             [_refreshView stopAnimation];
             self.refreshing = NO;
         });
@@ -151,6 +158,7 @@ static NSString *cellID = @"tableContentViewCell";
     
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 55, kScreenWidth, kScreenHeight - 55)];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.showsHorizontalScrollIndicator = NO;
         _tableView.backgroundColor = [UIColor whiteColor];
@@ -174,7 +182,7 @@ static NSString *cellID = @"tableContentViewCell";
         [revealController panGestureRecognizer];
         [revealController tapGestureRecognizer];
         _backBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 25, 25)];
-        [_backBtn addTarget:revealController
+        [_backBtn addTarget:self.revealViewController
                      action:@selector(revealToggle:)
            forControlEvents:UIControlEventTouchUpInside];
         [_backBtn setImage:[UIImage imageNamed:@"News_Arrow"]
@@ -199,7 +207,7 @@ static NSString *cellID = @"tableContentViewCell";
     _titleLabel.centerX = self.view.centerX;
     self.refreshView.x = self.titleLabel.x - 30;
     
-    //[self updateData];
+    [self updateData];
     
     
 }
@@ -221,6 +229,7 @@ static NSString *cellID = @"tableContentViewCell";
     }
     return _tool;
 }
+
 
 
 @end

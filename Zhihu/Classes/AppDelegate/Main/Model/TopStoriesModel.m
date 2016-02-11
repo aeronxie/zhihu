@@ -10,9 +10,7 @@
 #import "MJExtension.h"
 
 @implementation TopStoriesModel
-+(NSDictionary *)mj_replacedKeyFromPropertyName {
-    return @{ @"ID" : @"id"};
-}
+
 
 @end
 

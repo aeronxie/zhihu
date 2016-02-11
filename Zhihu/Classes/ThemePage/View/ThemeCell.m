@@ -1,15 +1,15 @@
 //
-//  TableContentViewCell.m
+//  ThemeCell.m
 //  Zhihu
 //
-//  Created by Fay on 15/12/27.
-//  Copyright © 2015年 Fay. All rights reserved.
+//  Created by Fay on 16/02/11.
+//  Copyright © 2016年 Fay. All rights reserved.
 //
 
-#import "TableContentViewCell.h"
+#import "ThemeCell.h"
 #import "UIImageView+WebCache.h"
 
-@interface TableContentViewCell ()
+@interface ThemeCell ()
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TableContentViewCell
+@implementation ThemeCell
 
 -(void)setStoryModel:(StoriesModel *)storyModel {
     

@@ -11,15 +11,24 @@
 #import "ThemeTool.h"
 #import "Theme.h"
 #import "MJExtension.h"
+#import "TableContentViewCell.h"
+#import "DataSource.h"
+#import "ThemeViewController.h"
+#import "SWRevealViewController.h"
+#import "PageViewController.h"
 
 #define kRowHeight 44
 @interface SideMenuViewController ()<UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (assign,nonatomic) CGFloat startHeight;
 @property (weak, nonatomic) IBOutlet UIButton *homePageBtn;
 @property (nonatomic, strong) ThemeTool *tool;
-@property (nonatomic, strong) NSArray *themesArray;
+@property (nonatomic, strong) NSMutableArray *themesArray;
+@property (nonatomic, strong) DataSource *tableViewDataSource;
+@property (nonatomic, strong) ThemeViewController *themeVc;
 
+@property (nonatomic, strong) UINavigationController *navi;
 @end
 
 @implementation SideMenuViewController
@@ -28,12 +37,10 @@
     [super viewDidLoad];
    
     [self.tool getThemesWithSuccessfulBlock:^(id obj) {
-        self.themesArray = obj;
+        [self.themesArray addObjectsFromArray:obj];
         [self setScrollView];
     }];
-    
-    
-    
+  
 }
 
 /**
@@ -60,24 +67,30 @@
     [_homePageBtn addTarget:self action:@selector(homePageClick) forControlEvents:UIControlEventTouchDown];
 }
 
+
 -(void)homePageClick {
     
-    NSLog(@"点击了首页");
-  
+    PageViewController *pageVc = [[PageViewController alloc]init];
+    pageVc.view.backgroundColor = [UIColor whiteColor];
+    
+    SWRevealViewController *swVc = self.revealViewController;
+    
+    [swVc pushFrontViewController:pageVc animated:YES];
+ 
 }
+
 -(void)touch:(UIButton *)button {
     
-    NSLog(@"点击了我了 %ld",(long)button.tag);
+    Theme *theme = self.themesArray[button.tag];
+    
+    self.themeVc.theme = theme;
+    SWRevealViewController *swVc = self.revealViewController;
+    
+    [swVc pushFrontViewController:self.navi animated:YES];
+    
 }
 
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//
-//    NSLog(@"%f",_startHeight);
-//    self.scrollView.contentSize = CGSizeMake(0, _startHeight);
-//
-//}
-
+//重新计算大小
 -(void)viewDidLayoutSubviews {
     self.scrollView.contentSize = CGSizeMake(0,_startHeight);
 }
@@ -95,5 +108,30 @@
     return _tool;
 }
 
+- (NSMutableArray *)themesArray{
+    if (_themesArray == nil) {
+        _themesArray = [NSMutableArray array];
+        
+    }
+    return _themesArray;
+}
+
+- (UINavigationController *)navi{
+    if (_navi == nil) {
+        _navi = [[UINavigationController alloc]initWithRootViewController:self.themeVc];
+        _navi.navigationBarHidden = YES;
+        
+    }
+    return _navi;
+}
+
+
+- (ThemeViewController *)themeVc{
+    if ( _themeVc == nil) {
+        _themeVc = [[ThemeViewController alloc]init];
+        _themeVc.view.backgroundColor = [UIColor whiteColor];
+    }
+    return _themeVc;
+}
 
 @end

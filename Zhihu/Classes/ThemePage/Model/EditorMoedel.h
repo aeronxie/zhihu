@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *bio;
-@property (nonatomic, assign) NSInteger *id;
+@property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, copy) NSString *avatar;
 @property (nonatomic, copy) NSString *name;
 

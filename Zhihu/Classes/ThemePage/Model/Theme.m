@@ -7,7 +7,13 @@
 //
 
 #import "Theme.h"
+#import "MJExtension.h"
 
 @implementation Theme
++(NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+             @"ID" : @"id"
+             };
+}
 
 @end
