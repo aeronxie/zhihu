@@ -18,6 +18,7 @@
 #import "Theme.h"
 #import "ThemeNewsModel.h"
 #import "UIImageView+WebCache.h"
+#import "EditorInfoViewController.h"
 
 static NSString *cellID = @"ThemeCell";
 
@@ -55,6 +56,18 @@ static NSString *cellID = @"ThemeCell";
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (indexPath.row == 0) {
+        EditorInfoViewController *editorVc = [[EditorInfoViewController alloc]init];
+        editorVc.editors = self.themeNews.editors;
+//        [self presentViewController:editorVc animated:YES completion:^{
+//            nil;
+//        }];
+        [self.navigationController pushViewController:editorVc animated:YES];
+        
+        NSLog(@"=============");
+        return;
+    }
+    
     ThemeCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentLabel.textColor = [UIColor lightGrayColor];
     StoriesModel *storyModel = [self.tableViewDataSource itemAtIndexPath:indexPath];
@@ -89,11 +102,9 @@ static NSString *cellID = @"ThemeCell";
         cell.storyModel = story; 
     
     };
-//    self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories
-//                                                 cellIdentifier:cellID
-//                                             configureCellBlock:configureCell];
     
     self.tableViewDataSource = [[ThemeData alloc]initWithItems:self.themeNews.stories editors:self.themeNews.editors cellIdentifier:cellID configureCellBlock:configureCell];
+    
     self.tableView.dataSource = self.tableViewDataSource;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ThemeCell"
