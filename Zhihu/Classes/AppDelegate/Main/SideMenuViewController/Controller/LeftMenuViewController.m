@@ -38,12 +38,17 @@
         self.tableView.dataSource = self;
         [self.tableView reloadData];
     }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -52,8 +57,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+    //默认选中第一行
+    [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
+
     if (indexPath.row == 0) {
         HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
         return cell;
@@ -86,7 +92,6 @@
         
         [swVc pushFrontViewController:self.navi animated:YES];
     }
-    
     
 }
 
