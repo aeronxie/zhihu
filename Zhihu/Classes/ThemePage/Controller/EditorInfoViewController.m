@@ -9,23 +9,28 @@
 #import "EditorInfoViewController.h"
 #import "EditorMoedel.h"
 #import "UIImageView+WebCache.h"
+#import "EditorInfoCell.h"
 
-static NSString *const cellID = @"editorCell";
+static NSString *const cellID = @"editorInfo";
 @interface EditorInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UINavigationController *navi;
+@property (nonatomic, strong) UIView *naviBar;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *leftNaviButton;
 @end
 
 @implementation EditorInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.navigationController.navigationBarHidden = NO;
-    self.navigationController.navigationBar.barTintColor = kColor(23, 144, 211);
-    self.title = @"主编";
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.naviBar];
+    [self.view addSubview:self.titleLabel];
+    [self.view addSubview:self.leftNaviButton];
+    [self.tableView reloadData];
     
 }
 
@@ -34,13 +39,16 @@ static NSString *const cellID = @"editorCell";
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)leftClick {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 #pragma mark - UITableViewDelegate
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    return 44;
-//    
-//    
-//}
+
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -51,27 +59,24 @@ static NSString *const cellID = @"editorCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     EditorMoedel *editor = self.editors[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    EditorInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
-        cell.imageView.layer.cornerRadius = 10;
-        cell.imageView.clipsToBounds = YES;
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:editor.avatar] placeholderImage:[UIImage imageNamed:@"Account_Avatar"]];
-        cell.textLabel.text = editor.name;
-        cell.detailTextLabel.text = editor.bio;
-        
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"EditorInfoCell" owner:self options:nil]lastObject];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.editor = editor;
     }
     
     return cell;
 }
 
 
-
 - (UITableView *)tableView{
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]init];
-        _tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        _tableView.frame = CGRectMake(0, 55, kScreenWidth, kScreenHeight-55);
         _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_tableView];
         
@@ -79,7 +84,45 @@ static NSString *const cellID = @"editorCell";
     return _tableView;
 }
 
+-(UIView *)naviBar {
+    if (!_naviBar) {
+        _naviBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 55)];
+        _naviBar.backgroundColor = kColor(23, 144, 211);
+        
+    }
+    return _naviBar;
+}
 
+-(UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.attributedText = [[NSAttributedString alloc]
+                                      initWithString:@"主编"
+                                      attributes:@{NSFontAttributeName:
+                                                       [UIFont
+                                                        systemFontOfSize:18],NSForegroundColorAttributeName:
+                                                       [UIColor whiteColor]}];
+        [_titleLabel sizeToFit];
+        _titleLabel.centerX = self.view.centerX;
+        _titleLabel.centerY = 35;
+    }
+    return _titleLabel;
+    
+}
+
+- (UIButton *)leftNaviButton{
+    if (_leftNaviButton == nil) {
+        
+        _leftNaviButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 30, 30)];
+        [_leftNaviButton addTarget:self
+                            action:@selector(leftClick)
+                  forControlEvents:UIControlEventTouchUpInside];
+        [_leftNaviButton setImage:[UIImage imageNamed:@"News_Arrow"]
+                         forState:UIControlStateNormal];
+    }
+    return _leftNaviButton;
+}
 
 
 @end

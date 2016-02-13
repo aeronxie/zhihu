@@ -30,6 +30,8 @@
 		6518AFFF1C6CB6DD0083248F /* ThemeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFFE1C6CB6DD0083248F /* ThemeData.m */; };
 		6518B0021C6D62E50083248F /* EditoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518B0011C6D62E50083248F /* EditoCell.m */; };
 		651E8F6E1C6E3D9100D1BFFE /* EditorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651E8F6D1C6E3D9100D1BFFE /* EditorInfoViewController.m */; };
+		651E8F721C6EDD5200D1BFFE /* EditorInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 651E8F701C6EDD5200D1BFFE /* EditorInfoCell.m */; };
+		651E8F731C6EDD5200D1BFFE /* EditorInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651E8F711C6EDD5200D1BFFE /* EditorInfoCell.xib */; };
 		652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 652596FF1C1805CC006B2A91 /* MSWeakTimer.m */; };
 		652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597031C1805F7006B2A91 /* JSAnimatedImagesView.m */; };
 		6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597091C180724006B2A91 /* LanuchViewController.m */; };
@@ -111,6 +113,9 @@
 		6518B0011C6D62E50083248F /* EditoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditoCell.m; sourceTree = "<group>"; };
 		651E8F6C1C6E3D9100D1BFFE /* EditorInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorInfoViewController.h; sourceTree = "<group>"; };
 		651E8F6D1C6E3D9100D1BFFE /* EditorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorInfoViewController.m; sourceTree = "<group>"; };
+		651E8F6F1C6EDD5200D1BFFE /* EditorInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorInfoCell.h; sourceTree = "<group>"; };
+		651E8F701C6EDD5200D1BFFE /* EditorInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorInfoCell.m; sourceTree = "<group>"; };
+		651E8F711C6EDD5200D1BFFE /* EditorInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorInfoCell.xib; sourceTree = "<group>"; };
 		652596FE1C1805CC006B2A91 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
 		652596FF1C1805CC006B2A91 /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
 		652597021C1805F7006B2A91 /* JSAnimatedImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAnimatedImagesView.h; sourceTree = "<group>"; };
@@ -326,6 +331,9 @@
 				6518AFFA1C6CB47B0083248F /* ThemeCell.xib */,
 				6518AFE21C6B780C0083248F /* TopImageView.h */,
 				6518AFE31C6B780C0083248F /* TopImageView.m */,
+				651E8F6F1C6EDD5200D1BFFE /* EditorInfoCell.h */,
+				651E8F701C6EDD5200D1BFFE /* EditorInfoCell.m */,
+				651E8F711C6EDD5200D1BFFE /* EditorInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -655,6 +663,7 @@
 				6518AFFC1C6CB47B0083248F /* ThemeCell.xib in Resources */,
 				656DB2431C17F8F900155183 /* Assets.xcassets in Resources */,
 				656DB2411C17F8F900155183 /* Main.storyboard in Resources */,
+				651E8F731C6EDD5200D1BFFE /* EditorInfoCell.xib in Resources */,
 				656878421C313435003684F1 /* TableContentViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +737,7 @@
 				651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */,
 				6518AFE51C6B780C0083248F /* ThemeNewsModel.m in Sources */,
 				651392CF1C1965750032FAD1 /* SideMenuViewController.m in Sources */,
+				651E8F721C6EDD5200D1BFFE /* EditorInfoCell.m in Sources */,
 				651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */,
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
 				6525970F1C18167D006B2A91 /* MainViewController.m in Sources */,

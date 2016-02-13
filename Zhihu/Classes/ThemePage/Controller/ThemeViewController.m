@@ -59,12 +59,9 @@ static NSString *cellID = @"ThemeCell";
     if (indexPath.row == 0) {
         EditorInfoViewController *editorVc = [[EditorInfoViewController alloc]init];
         editorVc.editors = self.themeNews.editors;
-//        [self presentViewController:editorVc animated:YES completion:^{
-//            nil;
-//        }];
+
         [self.navigationController pushViewController:editorVc animated:YES];
-        
-        NSLog(@"=============");
+
         return;
     }
     
