@@ -6,3 +6,4 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SVProgressHUD', '~> 2.0-beta'
 pod 'MJExtension', '~> 3.0.7'
 pod 'UMengSocial', '~> 4.3'
+

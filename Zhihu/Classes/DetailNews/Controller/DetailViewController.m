@@ -13,6 +13,7 @@
 #import "DetailFooterView.h"
 #import "DetailViewTool.h"
 #import "StoryModelTool.h"
+#import "BrowserViewController.h"
 
 @interface DetailViewController ()<UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *webView;
@@ -92,8 +93,26 @@
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
+    NSString *str = request.URL.absoluteString;
+    //去掉连接签名多余部分
+    if ([str hasPrefix:@"myweb:imageClick:"]) {
+        str = [str stringByReplacingOccurrencesOfString:@"myweb:imageClick:"
+                                             withString:@""];
+        //[WebImgScrollView showImageWithStr:str];
+        return YES;
+        
+    }else if ([str isEqualToString:@"about:blank"]){
+        
+    } else{
+        BrowserViewController *webVC = [[BrowserViewController alloc] initWithNSString:str];
+        [self.navigationController pushViewController:webVC animated:YES];
+        return NO;
+    }
     
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    return YES;
+
+  
     return YES;
 }
 
