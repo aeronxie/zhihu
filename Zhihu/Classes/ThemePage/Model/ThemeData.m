@@ -47,7 +47,7 @@
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.items[indexPath.row];
+    return self.items[indexPath.row - 1];
 }
 
 #pragma mark UITableViewDataSource
@@ -55,7 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return self.items.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

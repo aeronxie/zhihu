@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
-#import "SideMenuViewController.h"
 #import "ParallaxHeaderView.h"
 #import "SDCycleScrollView.h"
 #import "AppDelegate.h"

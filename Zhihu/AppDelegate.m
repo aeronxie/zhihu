@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PageViewController.h"
-#import "SideMenuViewController.h"
+#import "LeftMenuViewController.h"
 #import "SWRevealViewController.h"
 
 
@@ -82,7 +82,7 @@
     
     [self.window makeKeyAndVisible];
     
-    SideMenuViewController *sideVc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"slider"];
+    LeftMenuViewController *sideVc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"left"];
     SWRevealViewController *swVc = [[SWRevealViewController alloc]initWithRearViewController:sideVc frontViewController:naviVc];
     swVc.rearViewRevealWidth = 250;
     self.window.rootViewController = swVc;

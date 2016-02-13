@@ -11,13 +11,10 @@
 		651392C21C19399F0032FAD1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392C11C19399F0032FAD1 /* UIView+Extension.m */; };
 		651392C71C1941740032FAD1 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392C61C1941740032FAD1 /* GradientView.m */; };
 		651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392CA1C1964A30032FAD1 /* SWRevealViewController.m */; };
-		651392CF1C1965750032FAD1 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392CE1C1965750032FAD1 /* SideMenuViewController.m */; };
 		651392D21C1973D50032FAD1 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392D11C1973D50032FAD1 /* UINavigationBar+Awesome.m */; };
 		651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392D51C1AA4FE0032FAD1 /* ParallaxHeaderView.m */; };
 		651392D91C1AA52C0032FAD1 /* myUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392D81C1AA52C0032FAD1 /* myUILabel.m */; };
 		651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392DB1C1AA5660032FAD1 /* UIImage+ImageEffects.m */; };
-		651392E11C1AF0A10032FAD1 /* ItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651392E01C1AF0A10032FAD1 /* ItemsView.m */; };
-		651392E31C1AF0C30032FAD1 /* ItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651392E21C1AF0C30032FAD1 /* ItemsView.xib */; };
 		6518AFE41C6B780C0083248F /* EditorMoedel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFD81C6B780C0083248F /* EditorMoedel.m */; };
 		6518AFE51C6B780C0083248F /* ThemeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFDA1C6B780C0083248F /* ThemeNewsModel.m */; };
 		6518AFE61C6B780C0083248F /* ThemeNewsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6518AFDD1C6B780C0083248F /* ThemeNewsTool.m */; };
@@ -64,6 +61,9 @@
 		656DB2461C17F8F900155183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656DB2441C17F8F900155183 /* LaunchScreen.storyboard */; };
 		65880E891C4104B40048C1CC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65880E881C4104B40048C1CC /* HeaderView.m */; };
 		658EA4581C5F4A6400E4726A /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 658EA4571C5F4A6400E4726A /* DataSource.m */; };
+		65BD0DAE1C6EF15E007DF4CB /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DAD1C6EF15E007DF4CB /* LeftMenuViewController.m */; };
+		65BD0DB11C6EF6D7007DF4CB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DB01C6EF6D7007DF4CB /* HomeCell.m */; };
+		65BD0DB41C6EF9FE007DF4CB /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DB31C6EF9FE007DF4CB /* ContentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +77,6 @@
 		651392C61C1941740032FAD1 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		651392C91C1964A30032FAD1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		651392CA1C1964A30032FAD1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		651392CD1C1965750032FAD1 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuViewController.h; path = ../SideMenuViewController.h; sourceTree = "<group>"; };
-		651392CE1C1965750032FAD1 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuViewController.m; path = ../SideMenuViewController.m; sourceTree = "<group>"; };
 		651392D01C1973D50032FAD1 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		651392D11C1973D50032FAD1 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		651392D41C1AA4FE0032FAD1 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
@@ -87,9 +85,6 @@
 		651392D81C1AA52C0032FAD1 /* myUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myUILabel.m; sourceTree = "<group>"; };
 		651392DA1C1AA5660032FAD1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		651392DB1C1AA5660032FAD1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		651392DF1C1AF0A10032FAD1 /* ItemsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsView.h; sourceTree = "<group>"; };
-		651392E01C1AF0A10032FAD1 /* ItemsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsView.m; sourceTree = "<group>"; };
-		651392E21C1AF0C30032FAD1 /* ItemsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsView.xib; sourceTree = "<group>"; };
 		6518AFD71C6B780C0083248F /* EditorMoedel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorMoedel.h; sourceTree = "<group>"; };
 		6518AFD81C6B780C0083248F /* EditorMoedel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorMoedel.m; sourceTree = "<group>"; };
 		6518AFD91C6B780C0083248F /* ThemeNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeNewsModel.h; sourceTree = "<group>"; };
@@ -176,6 +171,12 @@
 		65880E881C4104B40048C1CC /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		658EA4561C5F4A6400E4726A /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		658EA4571C5F4A6400E4726A /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		65BD0DAC1C6EF15E007DF4CB /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		65BD0DAD1C6EF15E007DF4CB /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		65BD0DAF1C6EF6D7007DF4CB /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		65BD0DB01C6EF6D7007DF4CB /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		65BD0DB21C6EF9FE007DF4CB /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		65BD0DB31C6EF9FE007DF4CB /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +262,8 @@
 		651392DD1C1AEFD50032FAD1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				651392CD1C1965750032FAD1 /* SideMenuViewController.h */,
-				651392CE1C1965750032FAD1 /* SideMenuViewController.m */,
+				65BD0DAC1C6EF15E007DF4CB /* LeftMenuViewController.h */,
+				65BD0DAD1C6EF15E007DF4CB /* LeftMenuViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,9 +271,10 @@
 		651392DE1C1AEFD50032FAD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				651392DF1C1AF0A10032FAD1 /* ItemsView.h */,
-				651392E01C1AF0A10032FAD1 /* ItemsView.m */,
-				651392E21C1AF0C30032FAD1 /* ItemsView.xib */,
+				65BD0DAF1C6EF6D7007DF4CB /* HomeCell.h */,
+				65BD0DB01C6EF6D7007DF4CB /* HomeCell.m */,
+				65BD0DB21C6EF9FE007DF4CB /* ContentCell.h */,
+				65BD0DB31C6EF9FE007DF4CB /* ContentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -659,7 +661,6 @@
 			files = (
 				653EE1DC1C632B12000169F2 /* TopView.xib in Resources */,
 				656DB2461C17F8F900155183 /* LaunchScreen.storyboard in Resources */,
-				651392E31C1AF0C30032FAD1 /* ItemsView.xib in Resources */,
 				6518AFFC1C6CB47B0083248F /* ThemeCell.xib in Resources */,
 				656DB2431C17F8F900155183 /* Assets.xcassets in Resources */,
 				656DB2411C17F8F900155183 /* Main.storyboard in Resources */,
@@ -731,12 +732,12 @@
 				653EE1D11C623002000169F2 /* DetailViewController.m in Sources */,
 				6518AFEC1C6B78380083248F /* ThemeViewController.m in Sources */,
 				6518AFFF1C6CB6DD0083248F /* ThemeData.m in Sources */,
+				65BD0DB41C6EF9FE007DF4CB /* ContentCell.m in Sources */,
 				6518B0021C6D62E50083248F /* EditoCell.m in Sources */,
 				653EE1D71C626CCE000169F2 /* DetailFooterView.m in Sources */,
 				65880E891C4104B40048C1CC /* HeaderView.m in Sources */,
 				651392D61C1AA4FE0032FAD1 /* ParallaxHeaderView.m in Sources */,
 				6518AFE51C6B780C0083248F /* ThemeNewsModel.m in Sources */,
-				651392CF1C1965750032FAD1 /* SideMenuViewController.m in Sources */,
 				651E8F721C6EDD5200D1BFFE /* EditorInfoCell.m in Sources */,
 				651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */,
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
@@ -745,6 +746,7 @@
 				6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */,
 				6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */,
 				651392C21C19399F0032FAD1 /* UIView+Extension.m in Sources */,
+				65BD0DB11C6EF6D7007DF4CB /* HomeCell.m in Sources */,
 				6518AFE91C6B780C0083248F /* TopImageView.m in Sources */,
 				6518AFF41C6B90C40083248F /* ThemeTool.m in Sources */,
 				651392CB1C1964A30032FAD1 /* SWRevealViewController.m in Sources */,
@@ -768,7 +770,7 @@
 				6568786B1C392566003684F1 /* PageViewController.m in Sources */,
 				6568782E1C2F9749003684F1 /* StoriesModel.m in Sources */,
 				652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */,
-				651392E11C1AF0A10032FAD1 /* ItemsView.m in Sources */,
+				65BD0DAE1C6EF15E007DF4CB /* LeftMenuViewController.m in Sources */,
 				656DB2381C17F8F900155183 /* main.m in Sources */,
 				653EE1B81C61E6C5000169F2 /* StoryTabbarData.m in Sources */,
 			);
