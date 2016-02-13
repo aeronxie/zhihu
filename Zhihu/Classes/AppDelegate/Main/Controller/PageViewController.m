@@ -275,6 +275,11 @@ static NSString *cellID = @"tableContentViewCell";
     
 }
 
+//改变状态栏为白色
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - getter and setter
 - (UITableView *)tableView{
     if (!_tableView) {
