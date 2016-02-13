@@ -18,6 +18,8 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
+#define kUMAppkey @"56bedd8a67e58e9020002407"
+
 #define kColor(R,G,B) [UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:1]
 
 #define kWeakObj(obj) __weak typeof(obj) weak_##obj = obj

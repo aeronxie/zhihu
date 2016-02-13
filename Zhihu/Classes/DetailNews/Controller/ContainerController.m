@@ -13,6 +13,8 @@
 #import "DetailViewTool.h"
 #import "AppDelegate.h"
 #import "StoryModelTool.h"
+#import "UIImageView+WebCache.h"
+#import "UMSocial.h"
 
 
 typedef NS_OPTIONS(NSInteger, ToolsTabbarTag) {
@@ -25,7 +27,7 @@ typedef NS_OPTIONS(NSInteger, ToolsTabbarTag) {
 };
 static CGFloat const animationDuraion = 0.2f;
 
-@interface ContainerController ()<ToolsTabbarDelegate,DetailViewControllerDelegate>
+@interface ContainerController ()<ToolsTabbarDelegate,DetailViewControllerDelegate,UMSocialUIDelegate>
 
 @property (nonatomic, strong) ToolsTabbar *toolsTabbar;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -54,8 +56,6 @@ static CGFloat const animationDuraion = 0.2f;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-//    [delegate.swVc setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     
 }
 
@@ -92,12 +92,39 @@ static CGFloat const animationDuraion = 0.2f;
                 [self scrollToNextViewWithNumber:[self.tool getNextNewsWithId:self.storyId]];
             }
             break;
+         case ToolsTabbarTagShare:
+            [self share];
         default:
             break;
     }
 
 }
 
+-(void)share {
+    
+    //设置QQ分享内容
+    [UMSocialData defaultData].extConfig.qqData.title = @"知乎";
+    [UMSocialData defaultData].extConfig.qqData.url = self.story.share_url;
+    //设置微信分享内容
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = self.story.share_url;
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"知乎";
+    
+    //设置分享类型
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.story.image];
+    
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                              appKey:nil
+                                           shareText:self.story.title
+                                          shareImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.story.image]]]
+                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToQQ,UMShareToEmail,UMShareToRenren,UMShareToWechatSession,UMShareToLWTimeline,UMShareToWhatsapp,UMShareToTencent,UMShareToSms,UMShareToQzone,UMShareToAlipaySession, nil]
+                                            delegate:self];
+    
+}
+
+-(BOOL)isDirectShareInIconActionSheet
+{
+    return YES;
+}
 
 #pragma mark - getter and setter
 - (void)setStoryId:(NSNumber *)storyId{

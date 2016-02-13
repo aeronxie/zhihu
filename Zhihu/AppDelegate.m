@@ -10,7 +10,10 @@
 #import "PageViewController.h"
 #import "LeftMenuViewController.h"
 #import "SWRevealViewController.h"
-
+#import "UMSocial.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 
 
 @interface AppDelegate ()
@@ -25,6 +28,15 @@
     self.firstStart = YES;
     
     [self setMainViewController];
+    
+    //设置分享Appkey
+    [UMSocialData setAppKey:kUMAppkey];
+    
+    //开启QQ、微信、新浪分享
+    [UMSocialQQHandler setQQWithAppId:@"1105176776" appKey:@"yh5mzFBO9RFZPjYr" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:nil appSecret:nil url:@"http://www.umeng.com/social"];
+
+    
     //[self judgeFirst];
     
     return YES;
