@@ -10,20 +10,24 @@
 #import <objc/runtime.h>
 
 @implementation UIViewController (Extension)
+
 + (void)load {
-    
-    Method originaMethod = class_getInstanceMethod(self, @selector(viewDidLoad));
-    Method swizzleMethod = class_getInstanceMethod(self, @selector(xf_viewDidLoad));
-    
-    method_exchangeImplementations(originaMethod, swizzleMethod);
-    
-    
+    //保证交换方法只执行一次
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        Method originaMethod = class_getInstanceMethod(self, @selector(viewDidLoad));
+        Method swizzleMethod = class_getInstanceMethod(self, @selector(xf_viewDidLoad));
+        
+        method_exchangeImplementations(originaMethod, swizzleMethod);
+        
+    });
 }
 
 
 -(void)xf_viewDidLoad {
     
-    NSLog(@"%@",self);
+    NSLog(@"%@",self.class);
     
     [self xf_viewDidLoad];
 }

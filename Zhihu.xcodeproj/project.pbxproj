@@ -82,6 +82,7 @@
 		65BD0EA71C6F4B30007DF4CB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BD0E091C6F1AAB007DF4CB /* CoreTelephony.framework */; };
 		65BD0EA81C6F4B3D007DF4CB /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BD0E0B1C6F1AC0007DF4CB /* libstdc++.tbd */; };
 		65BD0EA91C6F4B46007DF4CB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BD0E0D1C6F1ACB007DF4CB /* libz.tbd */; };
+		65E785761C70786900761C29 /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E785751C70786900761C29 /* NSMutableArray+Extension.m */; };
 		D38C22BC93834DFC2DA998AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F072E6936C5541AFF862D10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -234,6 +235,8 @@
 		65BD0E971C6F49E2007DF4CB /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		65BD0E981C6F49E2007DF4CB /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		65BD0E991C6F49E2007DF4CB /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		65E785741C70786900761C29 /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
+		65E785751C70786900761C29 /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +287,8 @@
 				651392DB1C1AA5660032FAD1 /* UIImage+ImageEffects.m */,
 				6568783E1C2FD4E9003684F1 /* NSString+Date.h */,
 				6568783F1C2FD4E9003684F1 /* NSString+Date.m */,
+				65E785741C70786900761C29 /* NSMutableArray+Extension.h */,
+				65E785751C70786900761C29 /* NSMutableArray+Extension.m */,
 			);
 			name = Catagory;
 			path = Lib/Catagory;
@@ -887,6 +892,7 @@
 				651E8F721C6EDD5200D1BFFE /* EditorInfoCell.m in Sources */,
 				651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */,
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
+				65E785761C70786900761C29 /* NSMutableArray+Extension.m in Sources */,
 				6525970F1C18167D006B2A91 /* MainViewController.m in Sources */,
 				651392C71C1941740032FAD1 /* GradientView.m in Sources */,
 				6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */,
