@@ -103,11 +103,11 @@ static CGFloat const animationDuraion = 0.2f;
 -(void)share {
     
     //设置QQ分享内容
-    [UMSocialData defaultData].extConfig.qqData.title = @"知乎";
+    [UMSocialData defaultData].extConfig.qqData.title = self.story.title;
     [UMSocialData defaultData].extConfig.qqData.url = self.story.share_url;
     //设置微信分享内容
     [UMSocialData defaultData].extConfig.wechatSessionData.url = self.story.share_url;
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"知乎";
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = self.story.title;
     
     //设置分享类型
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.story.image];
