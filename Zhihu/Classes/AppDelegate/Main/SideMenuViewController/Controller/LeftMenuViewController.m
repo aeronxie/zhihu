@@ -78,10 +78,11 @@
     if (indexPath.row == 0) {
         PageViewController *pageVc = [[PageViewController alloc]init];
         pageVc.view.backgroundColor = [UIColor whiteColor];
-        
+        UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:pageVc];
+        navi.navigationBarHidden = YES;
         SWRevealViewController *swVc = self.revealViewController;
         
-        [swVc pushFrontViewController:pageVc animated:YES];
+        [swVc pushFrontViewController:navi animated:YES];
 
     }else {
         

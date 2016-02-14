@@ -45,9 +45,7 @@ static CGFloat const animationDutation = 0.2f;
     WebImgScrollView *imgSV = [[self alloc] initWithFrame:kScreenBounds];
     
     [[UIApplication sharedApplication].keyWindow addSubview:imgSV];
-    
-    
-    
+
     imgSV.imgUrl = url;
     
     return imgSV;
@@ -55,7 +53,7 @@ static CGFloat const animationDutation = 0.2f;
 
 
 #pragma mark - UIScrollView  delegate
-- (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.scaleView;
 }
@@ -77,12 +75,13 @@ static CGFloat const animationDutation = 0.2f;
     
 }
 
+//计算图片尺寸
 - (void)calculateImageFrame:(UIImage *)image{
     
     self.imageView.image = image;
     
-    float scaleX = self.scrollView.width/image.size.width;
-    float scaleY = self.scrollView.height/image.size.height;
+    float scaleX = self.scrollView.width / image.size.width;
+    float scaleY = self.scrollView.height / image.size.height;
     
     if (scaleX > scaleY)
     {
@@ -90,7 +89,7 @@ static CGFloat const animationDutation = 0.2f;
         
         self.imageView.frame = CGRectMake((self.scrollView.width - imgViewWidth) * 0.5,0 ,imgViewWidth, self.scrollView.height);
     }else{
-        float imgViewHeight = image.size.height*scaleX;
+        float imgViewHeight = image.size.height * scaleX;
         
         self.imageView.frame = CGRectMake(0, (self.scrollView.height - imgViewHeight) * 0.5, self.scrollView.width, imgViewHeight);
     }
@@ -102,15 +101,17 @@ static CGFloat const animationDutation = 0.2f;
     
 }
 
+//下载图片
 - (void)downLoadImg{
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        //[MBProgressHUD showError:@"无法读取相册"];
+        [SVProgressHUD showErrorWithStatus:@"无法读取相册"];
     }
     UIImageWriteToSavedPhotosAlbum(self.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+   
 }
 
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
-    //[MBProgressHUD showSuccess:@"已保存至相册"];
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    [SVProgressHUD showSuccessWithStatus:@"已保存至相册"];
     
 }
 
@@ -118,6 +119,7 @@ static CGFloat const animationDutation = 0.2f;
     [self removeView];
 }
 
+//移除透明View
 - (void)removeView{
     [UIView animateWithDuration:animationDutation animations:^{
         self.imageView.transform = CGAffineTransformMakeScale(0.7, 0.7);
@@ -127,8 +129,6 @@ static CGFloat const animationDutation = 0.2f;
         [self.scrollView removeFromSuperview];
     }];
 }
-
-
 
 
 #pragma mark - setter and getter

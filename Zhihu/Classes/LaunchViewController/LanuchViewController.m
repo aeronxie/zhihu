@@ -111,6 +111,7 @@ static NSString *const url = @"http://news-at.zhihu.com/api/4/start-image/1080*1
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             //将图片保存至本地磁盘
             [[SDImageCache sharedImageCache] storeImage:image forKey:launchImageKey toDisk:YES];
+            
         }];
         
         

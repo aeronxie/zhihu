@@ -14,6 +14,7 @@
 #import "DetailViewTool.h"
 #import "StoryModelTool.h"
 #import "BrowserViewController.h"
+#import "WebImgScrollView.h"
 
 @interface DetailViewController ()<UIWebViewDelegate>
 @property (nonatomic, strong) UIWebView *webView;
@@ -98,7 +99,7 @@
     if ([str hasPrefix:@"myweb:imageClick:"]) {
         str = [str stringByReplacingOccurrencesOfString:@"myweb:imageClick:"
                                              withString:@""];
-        //[WebImgScrollView showImageWithStr:str];
+        [WebImgScrollView showImageWithStr:str];
         return YES;
         
     }else if ([str isEqualToString:@"about:blank"]){

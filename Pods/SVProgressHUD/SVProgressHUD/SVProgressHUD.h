@@ -1,8 +1,8 @@
 //
 //  SVProgressHUD.h
-//  SVProgressHUD, https://github.com/TransitApp/SVProgressHUD
+//  SVProgressHUD, https://github.com/SVProgressHUD/SVProgressHUD
 //
-//  Copyright (c) 2011-2014 Sam Vermette and contributors. All rights reserved.
+//  Copyright (c) 2011-2016 Sam Vermette and contributors. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -112,7 +112,8 @@ typedef NS_ENUM(NSUInteger, SVProgressHUDAnimationType) {
 
 + (void)popActivity; // decrease activity count, if activity count == 0 the HUD is dismissed
 + (void)dismiss;
-+ (void)dismissWithDelay:(NSTimeInterval)delay; // delayes the dismissal
++ (void)dismissWithDelay:(NSTimeInterval)delay;
++ (void)dismissWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay;
 
 + (BOOL)isVisible;
 

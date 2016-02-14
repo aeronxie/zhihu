@@ -18,6 +18,8 @@
 #import "TableContentViewCell.h"
 #import "RefreshView.h"
 #import "ContainerController.h"
+#import "LanuchViewController.h"
+#import "AppDelegate.h"
 
 
 static CGFloat const rowHeight = 93.0f;
@@ -52,24 +54,60 @@ static NSString *cellID = @"tableContentViewCell";
 -(void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
- 
+    
     //设置滚动条
     [self setCycleScrollView];
 
+
+
     [self.tool loadNewStoriesWithData:^(id obj) {
-    
+
         [self setTableViewData:obj];
+    
         [self.view addSubview:self.tableView];
         [self.view addSubview:_cycleScrollView];
         [self.view addSubview:self.naviBar];
         [self.view addSubview:self.titleLabel];
         [self.view addSubview:self.leftNaviButton];
         [self.view addSubview:self.refreshView];
-
+        [self judgeFirst];
     }];
+       
+}
 
+//判断是不是第一次进入
+-(void)judgeFirst {
+
+    //获取总代理
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (appDelegate.firstStart) {
+        //如果是第一次启动
+        UIView *launchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        launchView.alpha = 0.99;
+        //得到第二启动页控制器并设置为子控制器
+        LanuchViewController *launchViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"launchViewController"];
+        [launchView addSubview:launchViewController.view];
+        [self addChildViewController:launchViewController];
+        [self.view addSubview:launchView];
+        
+        [UIView animateWithDuration:2.7f animations:^{
+            launchView.alpha = 1;
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.2 animations:^{
+                launchView.alpha = 0;
+  
+            } completion:^(BOOL finished) {
+                [launchView removeFromSuperview];
+            }];
+        }];
+        appDelegate.firstStart = NO;
+    }else {
+        
+    }
     
 }
+
 //加载数据
 -(void)setTableViewData:(id)data {
     self.stories = data;

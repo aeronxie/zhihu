@@ -37,7 +37,7 @@
     [UMSocialWechatHandler setWXAppId:nil appSecret:nil url:@"http://www.umeng.com/social"];
 
     
-    //[self judgeFirst];
+    [self judgeFirst];
     
     return YES;
 }
@@ -93,6 +93,8 @@
     naviVc.navigationBarHidden = YES;
     
     [self.window makeKeyAndVisible];
+    
+    //[self.window showLanuchPageAndSetUmeng];
     
     LeftMenuViewController *sideVc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"left"];
     SWRevealViewController *swVc = [[SWRevealViewController alloc]initWithRearViewController:sideVc frontViewController:naviVc];

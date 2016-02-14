@@ -84,7 +84,7 @@ static NSString *const url = @"http://news.at.zhihu.com/api/4/news/before/";
 -(void)judgeFirst {
     
     //获取总代理
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (appDelegate.firstStart) {
         //如果是第一次启动
         UIView *launchView = [[UIView alloc]initWithFrame:CGRectMake(0, -64, self.view.width, self.view.height)];

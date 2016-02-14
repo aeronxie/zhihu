@@ -1,11 +1,12 @@
 //
 //  SVIndefiniteAnimatedView.m
-//  SVProgressHUD, https://github.com/TransitApp/SVProgressHUD
+//  SVProgressHUD, https://github.com/SVProgressHUD/SVProgressHUD
 //
-//  Copyright (c) 2014 Guillaume Campagna. All rights reserved.
+//  Copyright (c) 2014-2016 Guillaume Campagna. All rights reserved.
 //
 
 #import "SVIndefiniteAnimatedView.h"
+#import "SVProgressHUD.h"
 
 #pragma mark SVIndefiniteAnimatedView
 
@@ -29,7 +30,10 @@
 - (void)layoutAnimatedLayer {
     CALayer *layer = self.indefiniteAnimatedLayer;
     [self.layer addSublayer:layer];
-    layer.position = CGPointMake(CGRectGetWidth(self.bounds) - CGRectGetWidth(layer.bounds) / 2, CGRectGetHeight(self.bounds) - CGRectGetHeight(layer.bounds) / 2);
+    
+    CGFloat widthDiff = CGRectGetWidth(self.bounds) - CGRectGetWidth(layer.bounds);
+    CGFloat heightDiff = CGRectGetHeight(self.bounds) - CGRectGetHeight(layer.bounds);
+    layer.position = CGPointMake(CGRectGetWidth(self.bounds) - CGRectGetWidth(layer.bounds) / 2 - widthDiff / 2, CGRectGetHeight(self.bounds) - CGRectGetHeight(layer.bounds) / 2 - heightDiff / 2);
 }
 
 - (CAShapeLayer*)indefiniteAnimatedLayer {
@@ -55,9 +59,10 @@
         
         CALayer *maskLayer = [CALayer layer];
         
-        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        NSBundle *bundle = [NSBundle bundleForClass:[SVProgressHUD class]];
         NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
         NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+        
         NSString *path = [imageBundle pathForResource:@"angle-mask" ofType:@"png"];
         
         maskLayer.contents = (__bridge id)[[UIImage imageWithContentsOfFile:path] CGImage];
@@ -100,10 +105,10 @@
 }
 
 - (void)setFrame:(CGRect)frame {
-    if(!CGRectEqualToRect(frame, super.frame)){
+    if(!CGRectEqualToRect(frame, super.frame)) {
         [super setFrame:frame];
         
-        if (self.superview) {
+        if(self.superview) {
             [self layoutAnimatedLayer];
         }
     }
@@ -111,13 +116,13 @@
 }
 
 - (void)setRadius:(CGFloat)radius {
-    if(radius != _radius){
+    if(radius != _radius) {
         _radius = radius;
         
         [_indefiniteAnimatedLayer removeFromSuperlayer];
         _indefiniteAnimatedLayer = nil;
         
-        if (self.superview) {
+        if(self.superview) {
             [self layoutAnimatedLayer];
         }
     }
