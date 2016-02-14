@@ -62,6 +62,7 @@
 		65880E891C4104B40048C1CC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65880E881C4104B40048C1CC /* HeaderView.m */; };
 		658EA4581C5F4A6400E4726A /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 658EA4571C5F4A6400E4726A /* DataSource.m */; };
 		658FD4B31C6F8EB800971A8F /* WebImgScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 658FD4B21C6F8EB800971A8F /* WebImgScrollView.m */; };
+		658FD4F01C705F1400971A8F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 658FD4EF1C705F1400971A8F /* SVProgressHUD.bundle */; };
 		65BD0DAE1C6EF15E007DF4CB /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DAD1C6EF15E007DF4CB /* LeftMenuViewController.m */; };
 		65BD0DB11C6EF6D7007DF4CB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DB01C6EF6D7007DF4CB /* HomeCell.m */; };
 		65BD0DB41C6EF9FE007DF4CB /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD0DB31C6EF9FE007DF4CB /* ContentCell.m */; };
@@ -194,7 +195,7 @@
 		658FD4B11C6F8EB800971A8F /* WebImgScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImgScrollView.h; sourceTree = "<group>"; };
 		658FD4B21C6F8EB800971A8F /* WebImgScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImgScrollView.m; sourceTree = "<group>"; };
 		658FD4D91C6F96FA00971A8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		658FD4E81C703B3900971A8F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = Zhihu/Classes/Lib/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		658FD4EF1C705F1400971A8F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		65BD0DAC1C6EF15E007DF4CB /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		65BD0DAD1C6EF15E007DF4CB /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		65BD0DAF1C6EF6D7007DF4CB /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
@@ -627,7 +628,7 @@
 		656DB22A1C17F8F900155183 = {
 			isa = PBXGroup;
 			children = (
-				658FD4E81C703B3900971A8F /* SVProgressHUD.bundle */,
+				658FD4EF1C705F1400971A8F /* SVProgressHUD.bundle */,
 				656DB2351C17F8F900155183 /* Zhihu */,
 				656DB2341C17F8F900155183 /* Products */,
 				1BD832FA8D026B33D36C56DA /* Pods */,
@@ -800,6 +801,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658FD4F01C705F1400971A8F /* SVProgressHUD.bundle in Resources */,
 				653EE1DC1C632B12000169F2 /* TopView.xib in Resources */,
 				656DB2461C17F8F900155183 /* LaunchScreen.storyboard in Resources */,
 				6518AFFC1C6CB47B0083248F /* ThemeCell.xib in Resources */,
