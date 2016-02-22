@@ -32,7 +32,6 @@
 		652597001C1805CC006B2A91 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 652596FF1C1805CC006B2A91 /* MSWeakTimer.m */; };
 		652597041C1805F7006B2A91 /* JSAnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597031C1805F7006B2A91 /* JSAnimatedImagesView.m */; };
 		6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652597091C180724006B2A91 /* LanuchViewController.m */; };
-		6525970F1C18167D006B2A91 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525970E1C18167D006B2A91 /* MainViewController.m */; };
 		653EE1A71C60DD45000169F2 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1A61C60DD45000169F2 /* RefreshView.m */; };
 		653EE1AF1C61E25E000169F2 /* ContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1AE1C61E25E000169F2 /* ContainerController.m */; };
 		653EE1B21C61E393000169F2 /* ToolsTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 653EE1B11C61E393000169F2 /* ToolsTabbar.m */; };
@@ -139,8 +138,6 @@
 		652597031C1805F7006B2A91 /* JSAnimatedImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAnimatedImagesView.m; sourceTree = "<group>"; };
 		652597081C180724006B2A91 /* LanuchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchViewController.h; sourceTree = "<group>"; };
 		652597091C180724006B2A91 /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
-		6525970D1C18167D006B2A91 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		6525970E1C18167D006B2A91 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		653EE1A51C60DD45000169F2 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		653EE1A61C60DD45000169F2 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		653EE1AD1C61E25E000169F2 /* ContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerController.h; sourceTree = "<group>"; };
@@ -520,8 +517,6 @@
 		6525970C1C181667006B2A91 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6525970D1C18167D006B2A91 /* MainViewController.h */,
-				6525970E1C18167D006B2A91 /* MainViewController.m */,
 				656878691C392566003684F1 /* PageViewController.h */,
 				6568786A1C392566003684F1 /* PageViewController.m */,
 			);
@@ -893,7 +888,6 @@
 				651392DC1C1AA5660032FAD1 /* UIImage+ImageEffects.m in Sources */,
 				656DB23B1C17F8F900155183 /* AppDelegate.m in Sources */,
 				65E785761C70786900761C29 /* NSMutableArray+Extension.m in Sources */,
-				6525970F1C18167D006B2A91 /* MainViewController.m in Sources */,
 				651392C71C1941740032FAD1 /* GradientView.m in Sources */,
 				6541408E1C6A3F57007EEE0A /* UIViewController+Extension.m in Sources */,
 				6525970A1C180724006B2A91 /* LanuchViewController.m in Sources */,
